@@ -1,0 +1,50 @@
+{
+  "name": "@contentful/contentful-extension-scripts",
+  "version": "0.0.8",
+  "description": "Configuration and scripts for Create Contentful Extension",
+  "keywords": [
+    "contentful",
+    "react",
+    "forma36",
+    "scripts"
+  ],
+  "author": "Alex Suevalov <alex.suevalov@contentful.com>",
+  "homepage": "https://github.com/contentful/create-contentful-extension#readme",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "scripts",
+    "template"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/create-contentful-extension.git"
+  },
+  "bin": {
+    "contentful-extension-scripts": "./lib/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/contentful/create-contentful-extension/issues"
+  },
+  "dependencies": {
+    "@babel/core": "7.3.3",
+    "@babel/plugin-proposal-class-properties": "7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.3.2",
+    "@babel/plugin-transform-runtime": "7.2.0",
+    "@babel/preset-env": "7.3.1",
+    "@babel/preset-react": "7.0.0",
+    "chalk": "2.4.2",
+    "cross-spawn": "6.0.5",
+    "fs-extra": "7.0.1",
+    "htmlnano": "0.2.3",
+    "parcel-bundler": "1.11.0",
+    "posthtml": "0.11.3",
+    "posthtml-inline-assets": "3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

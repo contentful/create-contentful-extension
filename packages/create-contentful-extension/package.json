@@ -1,0 +1,45 @@
+{
+  "name": "@contentful/create-contentful-extension",
+  "version": "0.0.5",
+  "description": "Create Contentful extensions with zero configuration",
+  "keywords": [
+    "react",
+    "contentful",
+    "generator",
+    "forma36",
+    "extension"
+  ],
+  "author": "Alex Suevalov <alex.suevalov@contentful.com>",
+  "homepage": "https://github.com/contentful/create-contentful-extension#readme",
+  "license": "MIT",
+  "main": "lib/create-contentful-extension.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "bin": {
+    "create-contentful-extension": "./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/create-contentful-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/contentful/create-contentful-extension/issues"
+  },
+  "dependencies": {
+    "chalk": "2.4.2",
+    "commander": "2.19.0",
+    "cross-spawn": "6.0.5",
+    "fs-extra": "7.0.1",
+    "inquirer": "6.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

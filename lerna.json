@@ -1,0 +1,9 @@
+{
+  "version": "independent",
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): %s"
+    }
+  }
+}
