@@ -37,9 +37,9 @@ if (typeof projectName === 'undefined') {
   process.exit(1);
 }
 
-createExtension(projectName, program.verbose, program.scriptsVersion);
+createExtension(projectName, program.verbose);
 
-function createExtension(name, verbose, version) {
+function createExtension(name, verbose) {
   const root = path.resolve(name);
   const appName = path.basename(root);
 
@@ -66,15 +66,19 @@ function createExtension(name, verbose, version) {
   );
 
   const originalDirectory = process.cwd();
-  run(root, appName, version, verbose, originalDirectory);
+  run(root, appName, verbose, originalDirectory);
 }
 
-function install(root, dependencies, verbose) {
+function install(root, dependencies, verbose, isDev) {
   return new Promise((resolve, reject) => {
-    const command = 'npm';
-    const args = [
+    let command;
+    let args;
+    command = 'npm';
+    args = [
       'install',
-      '--save',
+      '--prefix',
+      root,
+      isDev ? '--save-dev' : '--save',
       '--save-exact',
       '--loglevel',
       'error',
@@ -97,29 +101,28 @@ function install(root, dependencies, verbose) {
   });
 }
 
-function run(root, appName, version, verbose) {
+function run(root, appName, verbose, originalDirectory) {
   const allDependencies = [
     '@contentful/forma-36-fcss',
     '@contentful/forma-36-tokens',
     '@contentful/forma-36-react-components',
+    'contentful-ui-extensions-sdk',
     'react',
     'react-dom',
   ];
 
   const devDependencies = [
-    'lint-staged',
-    'husky',
-    'prettier',
     '@types/react',
     '@types/react-dom',
+    'contentful-cli',
+    path.resolve('./packages/contentful-extension-scripts'),
+    // 'contentful-extension-scripts',
   ];
-
-  console.log('Installing packages. This might take a couple of minutes.');
 
   return install(root, devDependencies, verbose, true).then(() => {
     install(root, allDependencies, verbose, false).then(() => {
-      // const init = require(`${root}/node_modules/react-chrome-extension-scripts/scripts/init.js`);
-      // init(root, appName, verbose);
+      const init = require(`${root}/node_modules/contentful-extension-scripts/scripts/init.js`);
+      init(root, appName, originalDirectory);
     });
   });
 }

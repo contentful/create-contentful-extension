@@ -15,16 +15,14 @@
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
-    "lint": "eslint ./packages"
+    "lint": "eslint ./packages",
+    "local:test": "rm -rf dist && node packages/create-contentful-extension/lib/index.js dist"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix",
@@ -38,8 +36,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && yarn test"
+      "pre-commit": "lint-staged"
     }
   }
 }
