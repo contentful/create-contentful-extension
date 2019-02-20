@@ -103,7 +103,6 @@ function install(root, dependencies, verbose, isDev) {
 
 function run(root, appName, verbose, originalDirectory) {
   const allDependencies = [
-    '@contentful/forma-36-tokens',
     '@contentful/forma-36-react-components',
     'contentful-ui-extensions-sdk',
     'react',
@@ -112,13 +111,7 @@ function run(root, appName, verbose, originalDirectory) {
   ];
 
   const devDependencies = [
-    '@types/react',
-    '@types/react-dom',
     'contentful-cli@0.18.0',
-    'eslint',
-    'eslint-config-prettier',
-    'eslint-plugin-react',
-    'babel-eslint',
     '@babel/core',
     '@babel/preset-env',
     '@babel/preset-react',
