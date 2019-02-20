@@ -109,12 +109,17 @@ function run(root, appName, verbose, originalDirectory) {
     'contentful-ui-extensions-sdk',
     'react',
     'react-dom',
+    'prop-types',
   ];
 
   const devDependencies = [
     '@types/react',
     '@types/react-dom',
     'contentful-cli',
+    'eslint',
+    'eslint-config-prettier',
+    'eslint-plugin-react',
+    'babel-eslint',
     path.resolve('./packages/contentful-extension-scripts'),
     // 'contentful-extension-scripts',
   ];

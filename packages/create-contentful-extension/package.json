@@ -14,11 +14,10 @@
   "license": "MIT",
   "main": "lib/create-contentful-extension.js",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=8.0.0"
   },
   "files": [
     "lib"

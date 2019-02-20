@@ -47,23 +47,6 @@ module.exports = (appPath, appName, originalDirectory) => {
     fs.copySync(templatePath, appPath);
   }
 
-  try {
-    fs.moveSync(
-      path.join(appPath, 'gitignore'),
-      path.join(appPath, '.gitignore'),
-      []
-    );
-  } catch (err) {
-    // Append if there's already a `.gitignore` file there
-    if (err.code === 'EEXIST') {
-      const data = fs.readFileSync(path.join(appPath, 'gitignore'));
-      fs.appendFileSync(path.join(appPath, '.gitignore'), data);
-      fs.unlinkSync(path.join(appPath, 'gitignore'));
-    } else {
-      throw err;
-    }
-  }
-
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
   // backward compatibility with old global-cli's.
