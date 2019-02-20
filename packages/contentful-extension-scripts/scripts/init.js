@@ -15,7 +15,8 @@ module.exports = (appPath, appName, originalDirectory) => {
   appPackage.scripts = {
     start: 'contentful-extension-scripts start',
     build: 'contentful-extension-scripts build',
-    local: 'contentful extension update --src http://localhost:1234 --force',
+    'dev:publish':
+      'contentful extension update --src http://localhost:1234 --force',
     publish: 'npm run build && contentful extension update --force',
   };
   appPackage.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
@@ -67,7 +68,7 @@ module.exports = (appPath, appName, originalDirectory) => {
   console.log(chalk.cyan(`  ${displayedCommand} build`));
   console.log('    Bundles the extension for production.');
   console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} local`));
+  console.log(chalk.cyan(`  ${displayedCommand} dev:publish`));
   console.log(
     '    Publishes version running in development mode to Contentful'
   );
@@ -81,7 +82,9 @@ module.exports = (appPath, appName, originalDirectory) => {
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
-    `  ${chalk.cyan(`${displayedCommand} local && ${displayedCommand} start`)}`
+    `  ${chalk.cyan(
+      `${displayedCommand} dev:publish && ${displayedCommand} start`
+    )}`
   );
   console.log();
   console.log('Happy hacking and enjoy Contentful!');

@@ -80,6 +80,7 @@ function install(root, dependencies, verbose, isDev) {
       root,
       isDev ? '--save-dev' : '--save',
       '--save-exact',
+      '--no-package-lock',
       '--loglevel',
       'error',
     ].concat(dependencies);
@@ -104,6 +105,8 @@ function install(root, dependencies, verbose, isDev) {
 function run(root, appName, verbose, originalDirectory) {
   const allDependencies = [
     '@contentful/forma-36-react-components',
+    '@contentful/forma-36-tokens',
+    '@contentful/forma-36-fcss',
     'contentful-ui-extensions-sdk',
     'react',
     'react-dom',
@@ -111,7 +114,7 @@ function run(root, appName, verbose, originalDirectory) {
   ];
 
   const devDependencies = [
-    'contentful-cli@0.18.0',
+    'contentful-cli',
     '@babel/core',
     '@babel/preset-env',
     '@babel/preset-react',
