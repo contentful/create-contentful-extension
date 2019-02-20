@@ -120,6 +120,11 @@ function run(root, appName, verbose, originalDirectory) {
     'eslint-config-prettier',
     'eslint-plugin-react',
     'babel-eslint',
+    '@babel/core',
+    '@babel/preset-env',
+    '@babel/preset-react',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-transform-runtime',
     path.resolve('./packages/contentful-extension-scripts'),
     // 'contentful-extension-scripts',
   ];
