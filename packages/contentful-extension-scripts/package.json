@@ -30,7 +30,6 @@
     "url": "https://github.com/contentful/create-contentful-extension/issues"
   },
   "dependencies": {
-    "express": "4.16.4",
     "cross-spawn": "6.0.5",
     "@babel/core": "7.3.3",
     "@babel/preset-env": "7.3.1",

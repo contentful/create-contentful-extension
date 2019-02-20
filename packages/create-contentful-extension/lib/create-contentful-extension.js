@@ -115,7 +115,7 @@ function run(root, appName, verbose, originalDirectory) {
   const devDependencies = [
     '@types/react',
     '@types/react-dom',
-    'contentful-cli',
+    'contentful-cli@0.18.0',
     'eslint',
     'eslint-config-prettier',
     'eslint-plugin-react',
