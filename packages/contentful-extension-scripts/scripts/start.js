@@ -17,7 +17,6 @@ const options = {
   contentHash: false, // Disable content hash from being included on the filename
   minify: false, // Minify files, enabled if process.env.NODE_ENV === 'production'
   scopeHoist: false, // Turn on experimental scope hoisting/tree shaking flag, for smaller production bundles
-  target: 'browser', // Browser/node/electron, defaults to browser
   logLevel: 3, // 5 = save everything to a file, 4 = like 3, but with timestamps and additionally log http requests to dev server, 3 = log info, warnings & errors, 2 = log warnings & errors, 1 = log errors
   hmr: true, // Enable or disable HMR while watching
   hmrPort: 0, // The port the HMR socket runs on, defaults to a random free port (0 in node.js resolves to a random free port)

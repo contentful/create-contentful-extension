@@ -71,6 +71,7 @@ module.exports = (appPath, appName, originalDirectory) => {
   console.log(
     '    Publishes version running in development mode to Contentful'
   );
+  console.log();
   console.log(chalk.cyan(`  ${displayedCommand} publish`));
   console.log(
     '    Bundles the extension for production and publishes bundled version to Contentful'

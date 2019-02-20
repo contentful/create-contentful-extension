@@ -103,7 +103,6 @@ function install(root, dependencies, verbose, isDev) {
 
 function run(root, appName, verbose, originalDirectory) {
   const allDependencies = [
-    '@contentful/forma-36-fcss',
     '@contentful/forma-36-tokens',
     '@contentful/forma-36-react-components',
     'contentful-ui-extensions-sdk',
