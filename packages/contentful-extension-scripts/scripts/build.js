@@ -33,32 +33,35 @@ const options = {
 
 const inlineAssets = async () => {
   const ENC = { encoding: 'utf8' };
-  const SCRIPT_PLACEHOLDER = '<placeholder>SCRIPT_PLACEHOLDER</placeholder>';
-  const STYLES_PLACEHOLDER = '<placeholder>STYLES_PLACEHOLDER</placeholder>';
 
   const read = file => fs.readFileSync(file, ENC);
+
+  let js = read(paths.build + '/index.js');
+
+  let css = '';
+
+  try {
+    css = read(paths.build + '/index.css');
+  } catch (e) {
+    // do nothing
+  }
 
   const html = `
   <!DOCTYPE html>
   <html>
     <head>
       <meta charset="utf-8" />
-      <style type="text/css">${STYLES_PLACEHOLDER}</style>
+      <style type="text/css">${css}</style>
     </head>
     <body>
       <div id="root"></div>
-      <script type="text/javascript">${SCRIPT_PLACEHOLDER}</script>
+      <script type="text/javascript">${js}</script>
     </body>
   </html>
-  `;
-
-  let result = html;
-
-  result = result.replace(SCRIPT_PLACEHOLDER, read(paths.build + '/index.js'));
-  result = result.replace(STYLES_PLACEHOLDER, read(paths.build + '/index.css'));
+  `.trim();
 
   const LIMIT = 1024 * 500;
-  const extensionSize = Buffer.byteLength(result);
+  const extensionSize = Buffer.byteLength(html);
 
   console.log();
   console.log(
@@ -80,7 +83,7 @@ const inlineAssets = async () => {
     process.exit(0);
   }
 
-  fs.writeFileSync(paths.build + '/index.html', result, ENC);
+  fs.writeFileSync(paths.build + '/index.html', html, ENC);
 };
 
 const bundler = new Bundler(entry, options);
