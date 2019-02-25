@@ -27,11 +27,16 @@ module.exports = (appPath, payload, originalDirectory) => {
     JSON.stringify(generateExtensionFile(name, type, fields), null, 2) + os.EOL
   );
 
-  const templatePath = path.join(ownPath, 'template');
+  const templates = [
+    path.join(ownPath, 'template', 'common'),
+    path.join(ownPath, 'template', type),
+  ];
 
-  if (fs.existsSync(templatePath)) {
-    fs.copySync(templatePath, appPath);
-  }
+  templates.forEach(path => {
+    if (fs.existsSync(path)) {
+      fs.copySync(path, appPath);
+    }
+  });
 
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
