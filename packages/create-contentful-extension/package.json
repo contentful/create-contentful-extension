@@ -1,6 +1,6 @@
 {
   "name": "create-contentful-extension",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "description": "Create Contentful extensions with zero configuration",
   "keywords": [
     "react",
