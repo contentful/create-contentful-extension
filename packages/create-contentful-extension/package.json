@@ -1,6 +1,6 @@
 {
   "name": "@contentful/create-contentful-extension",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create Contentful extensions with zero configuration",
   "keywords": [
     "react",
@@ -33,11 +33,11 @@
     "url": "https://github.com/contentful/create-contentful-extension/issues"
   },
   "dependencies": {
-    "inquirer": "6.2.2",
     "chalk": "2.4.2",
     "commander": "2.19.0",
     "cross-spawn": "6.0.5",
-    "fs-extra": "7.0.1"
+    "fs-extra": "7.0.1",
+    "inquirer": "6.2.2"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
