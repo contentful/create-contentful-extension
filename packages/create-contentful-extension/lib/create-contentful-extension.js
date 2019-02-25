@@ -95,7 +95,7 @@ function run(root, payload, verbose, originalDirectory) {
 
   return install(root, devDependencies, verbose, true).then(() => {
     install(root, allDependencies, verbose, false).then(() => {
-      const init = require(`${root}/node_modules/contentful-extension-scripts/scripts/init.js`);
+      const init = require(`${root}/node_modules/@contentful/contentful-extension-scripts/scripts/init.js`);
       init(root, payload, originalDirectory);
     });
   });
