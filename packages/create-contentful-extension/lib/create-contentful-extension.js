@@ -1,6 +1,7 @@
 /* eslint-disable no-console, no-process-exit */
 
 const chalk = require('chalk');
+const inquirer = require('inquirer');
 const commander = require('commander');
 const fs = require('fs-extra');
 const path = require('path');
@@ -37,38 +38,6 @@ if (typeof projectName === 'undefined') {
   process.exit(1);
 }
 
-createExtension(projectName, program.verbose);
-
-function createExtension(name, verbose) {
-  const root = path.resolve(name);
-  const appName = path.basename(root);
-
-  if (fs.pathExistsSync(name)) {
-    console.error(chalk.red(`${root} folder already exists.`));
-    process.exit(0);
-  }
-  fs.ensureDirSync(name);
-
-  console.log(`Creating a new Contentful extension in ${chalk.green(root)}.`);
-  console.log();
-
-  fs.writeFileSync(
-    path.join(root, 'package.json'),
-    JSON.stringify(
-      {
-        name: appName,
-        version: '0.1.0',
-        private: true,
-      },
-      null,
-      2
-    ) + os.EOL
-  );
-
-  const originalDirectory = process.cwd();
-  run(root, appName, verbose, originalDirectory);
-}
-
 function install(root, dependencies, verbose, isDev) {
   return new Promise((resolve, reject) => {
     let command;
@@ -102,7 +71,7 @@ function install(root, dependencies, verbose, isDev) {
   });
 }
 
-function run(root, appName, verbose, originalDirectory) {
+function run(root, payload, verbose, originalDirectory) {
   const allDependencies = [
     '@contentful/forma-36-react-components',
     '@contentful/forma-36-tokens',
@@ -127,7 +96,87 @@ function run(root, appName, verbose, originalDirectory) {
   return install(root, devDependencies, verbose, true).then(() => {
     install(root, allDependencies, verbose, false).then(() => {
       const init = require(`${root}/node_modules/contentful-extension-scripts/scripts/init.js`);
-      init(root, appName, originalDirectory);
+      init(root, payload, originalDirectory);
     });
   });
 }
+
+const createExtension = async (name, verbose) => {
+  const root = path.resolve(name);
+  const appName = path.basename(root);
+
+  if (fs.pathExistsSync(name)) {
+    console.error(chalk.red(`${root} folder already exists.`));
+    process.exit(0);
+  }
+  fs.ensureDirSync(name);
+
+  console.log(`Creating a new Contentful extension in ${chalk.green(root)}.`);
+  console.log();
+
+  const answers = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'type',
+      message: 'Select type of extension:',
+      choices: [
+        { name: 'field extension', value: 'fields' },
+        { name: 'sidebar extension', value: 'sidebar' },
+      ],
+    },
+    {
+      type: 'checkbox',
+      name: 'fields',
+      message: 'Select field types for this extension:',
+      choices: [
+        { name: 'Symbol' },
+        { name: 'Symbols' },
+        { name: 'Text' },
+        { name: 'Integer' },
+        { name: 'Number' },
+        { name: 'Date' },
+        { name: 'Boolean' },
+        { name: 'Entry' },
+        { name: 'Entries' },
+        { name: 'Asset' },
+        { name: 'Assets' },
+      ],
+      when: function(answers) {
+        return answers.type === 'fields';
+      },
+      validate: function(answer) {
+        if (answer.length < 1) {
+          return 'You must choose at least one field type.';
+        }
+        return true;
+      },
+    },
+  ]);
+
+  fs.writeFileSync(
+    path.join(root, 'package.json'),
+    JSON.stringify(
+      {
+        name: appName,
+        version: '0.1.0',
+        private: true,
+      },
+      null,
+      2
+    ) + os.EOL
+  );
+
+  const originalDirectory = process.cwd();
+  run(
+    root,
+    {
+      name: appName,
+      type: answers.type,
+      fields: answers.fields || [],
+    },
+    verbose,
+    originalDirectory
+  );
+};
+
+createExtension(projectName, program.verbose);

@@ -33,6 +33,7 @@
     "url": "https://github.com/contentful/create-contentful-extension/issues"
   },
   "dependencies": {
+    "inquirer": "6.2.2",
     "chalk": "2.4.2",
     "commander": "2.19.0",
     "cross-spawn": "6.0.5",
