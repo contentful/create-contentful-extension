@@ -6,6 +6,7 @@ const os = require('os');
 const chalk = require('chalk');
 const generateExtensionFile = require('./utils/generateExtensionFile');
 const updatePackageJsonFile = require('./utils/updatePackageJsonFile');
+const showHelp = require('./utils/showHelp');
 
 module.exports = (appPath, payload, originalDirectory) => {
   const { name, type, fields } = payload;
@@ -52,31 +53,15 @@ module.exports = (appPath, payload, originalDirectory) => {
 
   console.log();
   console.log(`Success! Created ${name} at ${appPath}`);
-  console.log('Inside that directory, you can run several commands:');
-  console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} start`));
-  console.log('    Starts the development server.');
-  console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} build`));
-  console.log('    Bundles the extension for production.');
-  console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} dev:publish`));
-  console.log(
-    '    Publishes version running in development mode to Contentful'
-  );
-  console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} publish`));
-  console.log(
-    '    Bundles the extension for production and publishes bundled version to Contentful'
-  );
+
+  showHelp();
+
   console.log();
   console.log('We suggest that you begin by typing:');
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
-    `  ${chalk.cyan(
-      `${displayedCommand} dev:publish && ${displayedCommand} start`
-    )}`
+    `  ${displayedCommand} login && ${chalk.cyan(`${displayedCommand} start`)}`
   );
   console.log();
   console.log('Happy hacking and enjoy Contentful!');
