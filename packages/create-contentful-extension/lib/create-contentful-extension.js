@@ -89,8 +89,8 @@ function run(root, payload, verbose, originalDirectory) {
     '@babel/preset-react',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-transform-runtime',
-    path.resolve('./packages/contentful-extension-scripts'),
-    //'@contentful/contentful-extension-scripts',
+    // path.resolve('./packages/contentful-extension-scripts'),
+    '@contentful/contentful-extension-scripts',
   ];
 
   return install(root, devDependencies, verbose, true).then(() => {

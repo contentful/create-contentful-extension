@@ -60,7 +60,7 @@ const inlineAssets = async () => {
   </html>
   `.trim();
 
-  const LIMIT = 1024 * 500;
+  const LIMIT = 1024 * 512;
   const extensionSize = Buffer.byteLength(html);
 
   console.log();
