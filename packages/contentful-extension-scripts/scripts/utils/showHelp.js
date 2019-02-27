@@ -9,7 +9,7 @@ module.exports = () => {
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} start`));
   console.log(
-    '    Starts the development server and publishes the extension in development mode'
+    '    Starts the development server and deploys the extension in development mode'
   );
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} build`));
@@ -23,9 +23,9 @@ module.exports = () => {
   console.log(chalk.cyan(`  ${displayedCommand} logout`));
   console.log('    End your current session with the CLI tool.');
   console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} publish`));
+  console.log(chalk.cyan(`  ${displayedCommand} deploy`));
   console.log(
-    '    Bundles the extension for production and publishes bundled version to Contentful'
+    '    Bundles the extension for production and deploys bundled version to Contentful'
   );
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} help`));

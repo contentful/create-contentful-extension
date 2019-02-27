@@ -5,7 +5,7 @@ module.exports = pkg => {
       'contentful space use && contentful extension update --src http://localhost:1234 --force',
     start: 'contentful-extension-scripts start',
     build: 'contentful-extension-scripts build',
-    publish:
+    deploy:
       'npm run build && contentful space use && contentful extension update --force',
     login: 'contentful login',
     logout: 'contentful logout',

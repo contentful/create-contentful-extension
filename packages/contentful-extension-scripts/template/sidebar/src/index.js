@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { Button } from '@contentful/forma-36-react-components';
+import Button from '@contentful/forma-36-react-components/dist/components/Button/Button';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import { init } from 'contentful-ui-extensions-sdk';
 
