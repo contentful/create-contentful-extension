@@ -21,7 +21,7 @@ module.exports = () => {
   );
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} logout`));
-  console.log('    End your current session with the CLI tool.');
+  console.log('    Ends your current session with the CLI tool.');
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} deploy`));
   console.log(
