@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import TextInput from '@contentful/forma-36-react-components/dist/components/TextInput/TextInput';
+import './index.css';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import { init } from 'contentful-ui-extensions-sdk';
 

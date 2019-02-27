@@ -120,8 +120,8 @@ const createExtension = async (name, verbose) => {
       name: 'type',
       message: 'Select type of extension:',
       choices: [
-        { name: 'field extension', value: 'fields' },
-        { name: 'sidebar extension', value: 'sidebar' },
+        { name: 'Field extension', value: 'fields' },
+        { name: 'Sidebar extension', value: 'sidebar' },
       ],
     },
     {
