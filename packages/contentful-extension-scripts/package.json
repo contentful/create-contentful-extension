@@ -1,6 +1,6 @@
 {
   "name": "@contentful/contentful-extension-scripts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Configuration and scripts for Create Contentful Extension",
   "keywords": [
     "contentful",
@@ -30,9 +30,6 @@
     "url": "https://github.com/contentful/create-contentful-extension/issues"
   },
   "dependencies": {
-    "posthtml": "0.11.3",
-    "posthtml-inline-assets": "3.0.0",
-    "htmlnano": "0.2.3",
     "@babel/core": "7.3.3",
     "@babel/plugin-proposal-class-properties": "7.3.3",
     "@babel/plugin-proposal-object-rest-spread": "7.3.2",
@@ -42,7 +39,10 @@
     "chalk": "2.4.2",
     "cross-spawn": "6.0.5",
     "fs-extra": "7.0.1",
-    "parcel-bundler": "1.11.0"
+    "htmlnano": "0.2.3",
+    "parcel-bundler": "1.11.0",
+    "posthtml": "0.11.3",
+    "posthtml-inline-assets": "3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
