@@ -1,9 +1,14 @@
 {
   "version": "independent",
   "command": {
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): %s"
+    },
     "publish": {
       "ignoreChanges": ["*.md"],
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "message": "chore(release): %s"
     }
   }
 }

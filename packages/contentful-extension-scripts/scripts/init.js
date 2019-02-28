@@ -64,5 +64,5 @@ module.exports = (appPath, payload, originalDirectory) => {
     `  ${displayedCommand} login && ${chalk.cyan(`${displayedCommand} start`)}`
   );
   console.log();
-  console.log('Happy hacking and enjoy Contentful!');
+  console.log('Happy hacking and enjoy Contentful UI Extensions!');
 };
