@@ -3,7 +3,8 @@
   "command": {
     "version": {
       "conventionalCommits": true,
-      "message": "chore(release): %s"
+      "exact": true,
+      "message": "chore(release): publish"
     }
   }
 }
