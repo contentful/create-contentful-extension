@@ -23,6 +23,9 @@
     "type": "git",
     "url": "git+https://github.com/contentful/create-contentful-extension.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "contentful-extension-scripts": "./lib/index.js"
   },
