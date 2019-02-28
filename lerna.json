@@ -4,11 +4,6 @@
     "version": {
       "conventionalCommits": true,
       "message": "chore(release): %s"
-    },
-    "publish": {
-      "ignoreChanges": ["*.md"],
-      "conventionalCommits": true,
-      "message": "chore(release): %s"
     }
   }
 }
