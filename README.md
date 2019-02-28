@@ -89,7 +89,7 @@ Shows help information about `create-contentful-extension`.
 
 ## What’s Included?
 
-Your environment will have everything you need to build a modern single-page React app:
+Your environment will have everything you need to build a modern Contentful UI Extension with React:
 
 - React, JSX, ES6, TypeScript and all that supported by [Parcel](https://parceljs.org)
 - [Forma 36](https://f36.contentful.com/) - React component library for Contentful design system.
