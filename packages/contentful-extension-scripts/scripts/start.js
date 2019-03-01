@@ -23,6 +23,7 @@ const options = {
   sourceMaps: true, // Enable or disable sourcemaps, defaults to enabled (minified builds currently always create sourcemaps)
   hmrHostname: '', // A hostname for hot module reload, default to ''
   detailedReport: false, // Prints a detailed report of the bundles, assets, filesizes and times, defaults to false, reports are only printed if watch is disabled
+  https: true, // This flag generates a self-signed certificate, you might have to configure your browser to allow self-signed certificates for localhost.
 };
 
 const bundler = new Bundler(entry, options);
