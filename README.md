@@ -1,6 +1,6 @@
 # Create Contentful Extension [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/contentful/create-contentful-extension/pulls)
 
-Create Contentful extensions using modern tech stack with no build configuration.
+Create Contentful Extension is a CLI tool for developing in-app extensions without the hassle of managing build configurations.
 
 If something doesn’t work, please [file an issue](https://github.com/contentful/create-contentful-extension/issues/new).
 
