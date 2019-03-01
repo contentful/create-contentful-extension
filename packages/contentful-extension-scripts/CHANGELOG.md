@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.0.9...@contentful/contentful-extension-scripts@0.1.0) (2019-03-01)
+
+
+### Features
+
+* **create-contentful-extension:** forma36 tree-shaking ([30a4cc8](https://github.com/contentful/create-contentful-extension/commit/30a4cc8))
+
+
+
+
+
 ## 0.0.9 (2019-02-28)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
