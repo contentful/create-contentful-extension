@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { TextInput } from '@contentful/forma-36-react-components';
-import './index.css';
-import '@contentful/forma-36-react-components/dist/styles.css';
 import { init } from 'contentful-ui-extensions-sdk';
+import '@contentful/forma-36-react-components/dist/styles.css';
+import './index.css';
 
 class App extends React.Component {
   static propTypes = {
