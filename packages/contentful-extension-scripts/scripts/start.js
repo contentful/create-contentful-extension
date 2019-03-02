@@ -30,7 +30,8 @@ const bundler = new Bundler(entry, options);
 
 const run = async () => {
   const port = process.env.PORT || 1234;
-  await bundler.serve(port);
+  const https = true;
+  await bundler.serve(port, https);
 };
 
 run();
