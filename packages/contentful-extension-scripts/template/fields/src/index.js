@@ -17,7 +17,20 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.sdk.window.startAutoResizer();
+
+    // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
+    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(
+      this.onExternalChange
+    );
   }
+
+  componentWillUnmount() {
+    this.detachExternalChangeHandler();
+  }
+
+  onExternalChange = (value) => {
+    this.setState({ value });
+  };
 
   onChange = e => {
     const value = e.currentTarget.value;
