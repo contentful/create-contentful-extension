@@ -66,7 +66,7 @@ Starts the development server and deploys the extension in development mode.
 
 The extension will automatically reload if you make changes to the code.
 
-**Note about https:** Parcel uses a self-signed certificate to [enable https on the dev server](https://parceljs.org/cli.html#enable-https). If the extension doesn't load or shows a security warning, open [https://localhost:1234](https://localhost:1234) in a new window and add an exception. When you go back to Contentful and reload the page, the security warning should be gone.
+**Note about https:** Parcel uses a self-signed certificate to [enable https on the dev server](https://parceljs.org/cli.html#enable-https). If the extension doesn't load or shows a security warning, open [https://localhost:1234](https://localhost:1234) in a new window and add an exception. When you go back to Contentful and reload the page, the security warning should be gone. On Firefox you might have to do the same for [https://localhost:65117](https://localhost:65117) (the websocket port) to get hot reloading to work. 
 
 ### `npm run build`
 
