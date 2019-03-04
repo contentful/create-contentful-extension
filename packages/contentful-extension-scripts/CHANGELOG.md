@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.1.0...@contentful/contentful-extension-scripts@0.2.0) (2019-03-04)
+
+
+### Features
+
+* Handle external field value changes ([9dc8027](https://github.com/contentful/create-contentful-extension/commit/9dc8027))
+* Move custom style imports last ([4493fb6](https://github.com/contentful/create-contentful-extension/commit/4493fb6))
+
+
+
+
+
 # [0.1.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.0.9...@contentful/contentful-extension-scripts@0.1.0) (2019-03-01)
 
 
