@@ -2,7 +2,7 @@ module.exports = pkg => {
   pkg.dependencies = pkg.dependencies || {};
   pkg.scripts = {
     prestart:
-      'contentful space use && contentful extension update --src https://localhost:1234 --force',
+      'contentful space use && contentful extension update --src http://localhost:1234 --force',
     start: 'contentful-extension-scripts start',
     build: 'contentful-extension-scripts build',
     deploy:
