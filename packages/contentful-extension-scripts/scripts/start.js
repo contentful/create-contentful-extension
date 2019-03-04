@@ -6,7 +6,7 @@ const Bundler = require('parcel-bundler');
 const paths = require('./utils/paths');
 
 const entry = paths.src + '/index.html';
-const https = process.env.HTTPS ? process.env.HTTPS === 'true' : true;
+const https = process.env.HTTPS === 'true';
 
 // Bundler options
 const options = {
