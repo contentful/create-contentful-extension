@@ -136,6 +136,7 @@ const createExtension = async (name, verbose) => {
         { name: 'Number' },
         { name: 'Date' },
         { name: 'Boolean' },
+        { name: 'Object' },
         { name: 'Entry' },
         { name: 'Entries' },
         { name: 'Asset' },
