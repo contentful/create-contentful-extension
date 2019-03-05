@@ -3,6 +3,7 @@
 process.env.NODE_ENV = 'production';
 
 const Bundler = require('parcel-bundler');
+const urlLoader = require('parcel-plugin-url-loader');
 const chalk = require('chalk');
 const fs = require('fs');
 const paths = require('./utils/paths');
@@ -80,6 +81,7 @@ const inlineAssets = async () => {
 const bundler = new Bundler(entry, options);
 
 const run = async () => {
+  await urlLoader(bundler);
   await bundler.bundle();
   await inlineAssets();
 };
