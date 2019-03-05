@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/create-contentful-extension@0.0.7...@contentful/create-contentful-extension@0.1.0) (2019-03-05)
+
+
+### Features
+
+* **contentful-extension-scripts:** inline all png, jpeg, gif and svg in producation mode ([#11](https://github.com/contentful/create-contentful-extension/issues/11)) ([6cad2b5](https://github.com/contentful/create-contentful-extension/commit/6cad2b5))
+
+
+
+
+
 ## [0.0.7](https://github.com/contentful/create-contentful-extension/compare/@contentful/create-contentful-extension@0.0.6...@contentful/create-contentful-extension@0.0.7) (2019-03-04)
 
 

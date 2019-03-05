@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.2.0...@contentful/contentful-extension-scripts@0.4.0) (2019-03-05)
+
+
+### Features
+
+* added .gitignore to a list of produced files ([#10](https://github.com/contentful/create-contentful-extension/issues/10)) ([445bdd9](https://github.com/contentful/create-contentful-extension/commit/445bdd9))
+* Enable https in development ([#4](https://github.com/contentful/create-contentful-extension/issues/4)) ([46fce3e](https://github.com/contentful/create-contentful-extension/commit/46fce3e))
+* **contentful-extension-scripts:** inline all png, jpeg, gif and svg in producation mode ([#11](https://github.com/contentful/create-contentful-extension/issues/11)) ([6cad2b5](https://github.com/contentful/create-contentful-extension/commit/6cad2b5))
+
+
+
+
+
 # [0.2.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.1.0...@contentful/contentful-extension-scripts@0.2.0) (2019-03-04)
 
 
