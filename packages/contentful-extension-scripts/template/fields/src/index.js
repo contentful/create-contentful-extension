@@ -28,7 +28,7 @@ class App extends React.Component {
     this.detachExternalChangeHandler();
   }
 
-  onExternalChange = (value) => {
+  onExternalChange = value => {
     this.setState({ value });
   };
 
@@ -58,3 +58,8 @@ class App extends React.Component {
 init(sdk => {
   ReactDOM.render(<App sdk={sdk} />, document.getElementById('root'));
 });
+
+// Enabling hot reload
+if (module.hot) {
+  module.hot.accept();
+}
