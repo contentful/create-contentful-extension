@@ -27,3 +27,8 @@ class App extends React.Component {
 init(sdk => {
   ReactDOM.render(<App sdk={sdk} />, document.getElementById('root'));
 });
+
+// Enabling hot reload
+if (module.hot) {
+  module.hot.accept();
+}
