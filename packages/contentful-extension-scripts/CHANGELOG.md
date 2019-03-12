@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.4.1...@contentful/contentful-extension-scripts@0.4.2) (2019-03-12)
+
+
+### Bug Fixes
+
+* **contentful-extension-scripts:** fix for hot reload in new version of Parcel ([#14](https://github.com/contentful/create-contentful-extension/issues/14)) ([77656bf](https://github.com/contentful/create-contentful-extension/commit/77656bf))
+
+
+
+
+
 ## [0.4.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.4.0...@contentful/contentful-extension-scripts@0.4.1) (2019-03-12)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
