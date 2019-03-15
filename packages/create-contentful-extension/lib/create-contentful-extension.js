@@ -49,7 +49,6 @@ function install(root, dependencies, verbose, isDev) {
       root,
       isDev ? '--save-dev' : '--save',
       '--save-exact',
-      '--no-package-lock',
       '--loglevel',
       'error',
     ].concat(dependencies);
@@ -72,32 +71,14 @@ function install(root, dependencies, verbose, isDev) {
 }
 
 function run(root, payload, verbose, originalDirectory) {
-  const allDependencies = [
-    '@contentful/forma-36-react-components',
-    '@contentful/forma-36-tokens',
-    '@contentful/forma-36-fcss',
-    'contentful-ui-extensions-sdk',
-    'react',
-    'react-dom',
-    'prop-types',
-  ];
-
   const devDependencies = [
-    'contentful-cli',
-    '@babel/core',
-    '@babel/preset-env',
-    '@babel/preset-react',
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-transform-runtime',
     // path.resolve('./packages/contentful-extension-scripts'),
     '@contentful/contentful-extension-scripts',
   ];
 
   return install(root, devDependencies, verbose, true).then(() => {
-    install(root, allDependencies, verbose, false).then(() => {
-      const init = require(`${root}/node_modules/@contentful/contentful-extension-scripts/scripts/init.js`);
-      init(root, payload, originalDirectory);
-    });
+    const init = require(`${root}/node_modules/@contentful/contentful-extension-scripts/scripts/init.js`);
+    init(root, payload, originalDirectory);
   });
 }
 
