@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.4.2...@contentful/contentful-extension-scripts@0.5.0) (2019-03-18)
+
+
+### Features
+
+* moved installing dependencies to a user land ([#18](https://github.com/contentful/create-contentful-extension/issues/18)) ([daedf71](https://github.com/contentful/create-contentful-extension/commit/daedf71))
+
+
+
+
+
 ## [0.4.2](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.4.1...@contentful/contentful-extension-scripts@0.4.2) (2019-03-12)
 
 
