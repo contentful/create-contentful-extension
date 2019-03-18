@@ -7,6 +7,7 @@ const chalk = require('chalk');
 const generateExtensionFile = require('./utils/generateExtensionFile');
 const updatePackageJsonFile = require('./utils/updatePackageJsonFile');
 const showHelp = require('./utils/showHelp');
+const { version } = require('../package.json');
 
 module.exports = (appPath, payload, originalDirectory) => {
   const { name, type, fields } = payload;
@@ -16,7 +17,7 @@ module.exports = (appPath, payload, originalDirectory) => {
   const ownPath = path.join(appPath, 'node_modules', ownPackageName);
   let appPackage = require(path.join(appPath, 'package.json'));
 
-  appPackage = updatePackageJsonFile(appPackage);
+  appPackage = updatePackageJsonFile(appPackage, version);
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
@@ -61,7 +62,9 @@ module.exports = (appPath, payload, originalDirectory) => {
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
-    `  ${displayedCommand} login && ${chalk.cyan(`${displayedCommand} start`)}`
+    `  ${chalk.cyan(
+      `npm install && ${displayedCommand} login && ${displayedCommand} start`
+    )}`
   );
   console.log();
   console.log('Happy hacking and enjoy Contentful UI Extensions!');

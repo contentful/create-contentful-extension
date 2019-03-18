@@ -8,7 +8,7 @@ If something doesn’t work, please [file an issue](https://github.com/contentfu
 
 ```sh
 npx @contentful/create-contentful-extension my-first-extension
-cd my-first-extension
+cd my-first-extension && npm install
 npm run login && npm run start
 ```
 
