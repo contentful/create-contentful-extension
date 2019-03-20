@@ -15,13 +15,13 @@ class App extends React.Component {
     this.props.sdk.window.startAutoResizer();
   }
 
-  render = () => {
+  render() {
     return (
       <Button buttonType="positive" isFullWidth={true}>
         Click on me!
       </Button>
     );
-  };
+  }
 }
 
 init(sdk => {

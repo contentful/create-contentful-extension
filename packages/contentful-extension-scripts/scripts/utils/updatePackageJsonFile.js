@@ -22,7 +22,7 @@ module.exports = (pkg, version) => {
   };
   pkg.dependencies = {
     '@contentful/forma-36-fcss': '^0.0.15',
-    '@contentful/forma-36-react-components': '^2.9.14',
+    '@contentful/forma-36-react-components': '^2.10.1',
     '@contentful/forma-36-tokens': '^0.2.2',
     'contentful-ui-extensions-sdk': '3.7.0',
     'prop-types': '^15.7.2',
