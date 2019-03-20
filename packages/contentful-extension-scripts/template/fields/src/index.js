@@ -42,7 +42,7 @@ class App extends React.Component {
     }
   };
 
-  render = () => {
+  render() {
     return (
       <TextInput
         width="large"
@@ -52,7 +52,7 @@ class App extends React.Component {
         onChange={this.onChange}
       />
     );
-  };
+  }
 }
 
 init(sdk => {
