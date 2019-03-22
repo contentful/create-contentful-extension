@@ -111,7 +111,7 @@ Yes, it's possible. Edit `prestart` and `start` scripts in package.json file acc
 
 ```json
 "prestart": "contentful space use && contentful extension update --src http://localhost:8000 --force",
-"start": "PORT=8000 contentful-extension-scripts start",
+"start": "contentful-extension-scripts start --port 8000",
 ```
 
 #### I don't want to select space every time while using `npm run start` and `npm run deploy` and I want to use different environment. What can I do?
