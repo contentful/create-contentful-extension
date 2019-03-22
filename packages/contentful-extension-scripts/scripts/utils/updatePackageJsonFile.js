@@ -18,13 +18,13 @@ module.exports = (pkg, version) => {
     '@babel/preset-env': '^7.3.4',
     '@babel/preset-react': '^7.0.0',
     '@contentful/contentful-extension-scripts': version,
-    'contentful-cli': '0.24.0',
+    'contentful-cli': '0.25.0',
   };
   pkg.dependencies = {
     '@contentful/forma-36-fcss': '^0.0.15',
     '@contentful/forma-36-react-components': '^2.10.1',
     '@contentful/forma-36-tokens': '^0.2.2',
-    'contentful-ui-extensions-sdk': '3.7.0',
+    'contentful-ui-extensions-sdk': '3.7.1',
     'prop-types': '^15.7.2',
     react: '^16.8.4',
     'react-dom': '^16.8.4',
