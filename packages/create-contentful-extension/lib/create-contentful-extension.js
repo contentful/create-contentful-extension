@@ -133,6 +133,15 @@ const createExtension = async (name, verbose) => {
         return true;
       },
     },
+    {
+      type: 'list',
+      name: 'language',
+      message: 'What language you want to use to develop extension:',
+      choices: [
+        { name: 'JavaScript', value: 'javascript' },
+        { name: 'TypeScript', value: 'typescript' },
+      ],
+    },
   ]);
 
   fs.writeFileSync(
@@ -155,6 +164,7 @@ const createExtension = async (name, verbose) => {
       name: appName,
       type: answers.type,
       fields: answers.fields || [],
+      language: answers.language,
     },
     verbose,
     originalDirectory

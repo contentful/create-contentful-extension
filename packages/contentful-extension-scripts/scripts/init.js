@@ -10,14 +10,18 @@ const showHelp = require('./utils/showHelp');
 const { version } = require('../package.json');
 
 module.exports = (appPath, payload, originalDirectory) => {
-  const { name, type, fields } = payload;
+  const { name, type, fields, language } = payload;
+  const currentLanguage = language || 'javascript';
 
   const ownPackageName = require(path.join(__dirname, '..', 'package.json'))
     .name;
   const ownPath = path.join(appPath, 'node_modules', ownPackageName);
   let appPackage = require(path.join(appPath, 'package.json'));
 
-  appPackage = updatePackageJsonFile(appPackage, version);
+  appPackage = updatePackageJsonFile(appPackage, {
+    version,
+    language: currentLanguage,
+  });
 
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
@@ -31,7 +35,8 @@ module.exports = (appPath, payload, originalDirectory) => {
 
   const templates = [
     path.join(ownPath, 'template', 'common'),
-    path.join(ownPath, 'template', type),
+    path.join(ownPath, 'template', currentLanguage),
+    path.join(ownPath, 'template', currentLanguage + '-' + type),
   ];
 
   templates.forEach(path => {

@@ -1,4 +1,4 @@
-module.exports = (pkg, version) => {
+module.exports = (pkg, { version, language }) => {
   pkg.dependencies = pkg.dependencies || {};
   pkg.scripts = {
     prestart:
@@ -31,5 +31,15 @@ module.exports = (pkg, version) => {
     'react-dom': '^16.8.4',
   };
   pkg.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
+
+  if (language === 'typescript') {
+    pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
+      '@types/react': '^16.8.8',
+      '@types/react-dom': '^16.8.3',
+      '@types/webpack-env': '1.13.9',
+      typescript: '3.3.4000',
+    });
+  }
+
   return pkg;
 };
