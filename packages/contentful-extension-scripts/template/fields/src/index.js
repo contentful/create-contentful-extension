@@ -11,9 +11,14 @@ class App extends React.Component {
     sdk: PropTypes.object.isRequired,
   };
 
-  state = {
-    value: this.props.sdk.field.getValue(),
-  };
+  detachExternalChangeHandler = null;
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.sdk.field.getValue(),
+    };
+  }
 
   componentDidMount() {
     this.props.sdk.window.startAutoResizer();
@@ -25,7 +30,9 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-    this.detachExternalChangeHandler();
+    if (this.detachExternalChangeHandler) {
+      this.detachExternalChangeHandler();
+    }
   }
 
   onExternalChange = value => {
