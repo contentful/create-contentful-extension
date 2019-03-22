@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.5.0...@contentful/contentful-extension-scripts@0.6.0) (2019-03-22)
+
+
+### Bug Fixes
+
+* removed unnecessary class property for render function ([4bb6134](https://github.com/contentful/create-contentful-extension/commit/4bb6134))
+* **contentful-extension-scripts:** correct initial value in field extension ([751250f](https://github.com/contentful/create-contentful-extension/commit/751250f))
+* **contentful-extension-scripts:** disable Parcel auto installation of new dependencies ([f9aff94](https://github.com/contentful/create-contentful-extension/commit/f9aff94))
+
+
+### Features
+
+* **contentful-extension-scripts:** added optional --no-inline to build command ([59a6a43](https://github.com/contentful/create-contentful-extension/commit/59a6a43))
+* **contentful-extension-scripts:** more sophisticated sidebar example ([9d13c2d](https://github.com/contentful/create-contentful-extension/commit/9d13c2d))
+* added ability to generate Typescript extension ([513ccb5](https://github.com/contentful/create-contentful-extension/commit/513ccb5))
+
+
+
+
+
 # [0.5.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.4.2...@contentful/contentful-extension-scripts@0.5.0) (2019-03-18)
 
 
