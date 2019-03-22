@@ -35,6 +35,7 @@ const options = {
   hmr: false, // Enable or disable HMR while watching
   sourceMaps: false, // Enable or disable sourcemaps, defaults to enabled (minified builds currently always create sourcemaps)
   detailedReport: true, // Prints a detailed report of the bundles, assets, filesizes and times, defaults to false, reports are only printed if watch is disabled
+  autoInstall: false, // Disable auto install
 };
 
 const inlineAssets = async () => {
