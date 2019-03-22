@@ -2,11 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { Button } from '@contentful/forma-36-react-components';
-import { init } from 'contentful-ui-extensions-sdk';
+import { init, locations } from 'contentful-ui-extensions-sdk';
+import tokens from '@contentful/forma-36-tokens';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.css';
+import extension from '../extension.json';
 
-class App extends React.Component {
+class DialogExtension extends React.Component {
+  static propTypes = {
+    sdk: PropTypes.object.isRequired,
+  };
+
+  render() {
+    return (
+      <div style={{ margin: tokens.spacingM }}>
+        <Button
+          buttonType="muted"
+          onClick={() => {
+            this.props.sdk.close('data from modal dialog');
+          }}
+        >
+          Close modal
+        </Button>
+      </div>
+    );
+  }
+}
+
+class SidebarExtension extends React.Component {
   static propTypes = {
     sdk: PropTypes.object.isRequired,
   };
@@ -15,17 +38,40 @@ class App extends React.Component {
     this.props.sdk.window.startAutoResizer();
   }
 
+  onButtonClick = async () => {
+    const result = await this.props.sdk.dialogs.openExtension({
+      id: extension.id,
+      width: 800,
+      title: 'The same extension rendered in modal window',
+    });
+    console.log(result);
+  };
+
   render() {
     return (
-      <Button buttonType="positive" isFullWidth={true}>
-        Click on me!
+      <Button
+        buttonType="positive"
+        isFullWidth={true}
+        onClick={this.onButtonClick}
+      >
+        Click on me to open dialog extension
       </Button>
     );
   }
 }
 
 init(sdk => {
-  ReactDOM.render(<App sdk={sdk} />, document.getElementById('root'));
+  if (sdk.location.is(locations.LOCATION_DIALOG)) {
+    ReactDOM.render(
+      <DialogExtension sdk={sdk} />,
+      document.getElementById('root')
+    );
+  } else {
+    ReactDOM.render(
+      <SidebarExtension sdk={sdk} />,
+      document.getElementById('root')
+    );
+  }
 });
 
 // Enabling hot reload
