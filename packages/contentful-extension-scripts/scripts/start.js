@@ -2,11 +2,14 @@
 
 process.env.NODE_ENV = 'development';
 
+const argv = require('yargs').argv;
+
 const Bundler = require('parcel-bundler');
 const paths = require('./utils/paths');
 
 const entry = paths.src + '/index.html';
-const https = process.env.HTTPS === 'true';
+const https = argv.https || false;
+const port = argv.port || 1234;
 
 // Bundler options
 const options = {
@@ -31,7 +34,6 @@ const options = {
 const bundler = new Bundler(entry, options);
 
 const run = async () => {
-  const port = process.env.PORT || 1234;
   await bundler.serve(port, https);
 };
 

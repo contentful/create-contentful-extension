@@ -2,6 +2,8 @@
 
 process.env.NODE_ENV = 'production';
 
+const argv = require('yargs').argv;
+
 const Bundler = require('parcel-bundler');
 const urlLoader = require('parcel-plugin-url-loader');
 const chalk = require('chalk');
@@ -10,6 +12,9 @@ const paths = require('./utils/paths');
 const postHTML = require('posthtml');
 const posthtmlInlineAssets = require('posthtml-inline-assets');
 const htmlnano = require('htmlnano');
+
+const shouldInlineAssets = argv.inline === false ? false : true;
+const shouldProduceSourceMaps = shouldInlineAssets === false;
 
 function bytesToSize(bytes) {
   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -33,7 +38,7 @@ const options = {
   scopeHoist: false, // Turn on experimental scope hoisting/tree shaking flag, for smaller production bundles
   logLevel: 3, // 5 = save everything to a file, 4 = like 3, but with timestamps and additionally log http requests to dev server, 3 = log info, warnings & errors, 2 = log warnings & errors, 1 = log errors
   hmr: false, // Enable or disable HMR while watching
-  sourceMaps: false, // Enable or disable sourcemaps, defaults to enabled (minified builds currently always create sourcemaps)
+  sourceMaps: shouldProduceSourceMaps, // Enable or disable sourcemaps, defaults to enabled (minified builds currently always create sourcemaps)
   detailedReport: true, // Prints a detailed report of the bundles, assets, filesizes and times, defaults to false, reports are only printed if watch is disabled
   autoInstall: false, // Disable auto install
 };
@@ -84,7 +89,9 @@ const bundler = new Bundler(entry, options);
 const run = async () => {
   await urlLoader(bundler);
   await bundler.bundle();
-  await inlineAssets();
+  if (shouldInlineAssets) {
+    await inlineAssets();
+  }
 };
 
 run();
