@@ -8,8 +8,15 @@ If something doesn’t work, please [file an issue](https://github.com/contentfu
 
 ```sh
 npx @contentful/create-contentful-extension my-first-extension
-cd my-first-extension && npm install
-npm run login && npm run start
+cd my-first-extension
+# install dependencies
+npm install
+# login to contentful
+npm run login
+# select what space and enviroment you'll be using for development and deployment
+npm run configure
+# start development server
+npm run start
 ```
 
 ### Requirements
@@ -44,6 +51,8 @@ Inside that directory, it will generate the initial project structure:
 my-first-extension
 ├── node_modules
 ├── .babelrc
+├── .contentfulrc.json
+├── .gitignore
 ├── package.json
 ├── extension.json
 └── src
@@ -79,6 +88,10 @@ Starts new session with our CLI. As the CLI tool uses our Content Management API
 
 Ends your current session with the CLI tool.
 
+### `npm run configure`
+
+Asks which space and environment you want to use for development and deployment. It saves your answers to local `.contentfulrc.json`
+
 ### `npm run deploy`
 
 Bundles the extension for production and deploys bundled version to Contentful.
@@ -112,14 +125,6 @@ Yes, it's possible. Edit `prestart` and `start` scripts in package.json file acc
 ```json
 "prestart": "contentful space use && contentful extension update --src http://localhost:8000 --force",
 "start": "contentful-extension-scripts start --port 8000",
-```
-
-#### I don't want to select space every time while using `npm run start` and `npm run deploy` and I want to use different environment. What can I do?
-
-You can replace `contentful space use` command in scripts with concrete `space-id` and `environment-id` values:
-
-```json
-"prestart": "contentful extension update --src http://localhost:1234 --space-id <space-id> --environment-id <env-id> --force"
 ```
 
 ## Contributing
