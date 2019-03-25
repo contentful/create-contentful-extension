@@ -55,8 +55,6 @@ module.exports = (appPath, payload, originalDirectory) => {
     cdpath = appPath;
   }
 
-  const displayedCommand = 'npm run';
-
   console.log();
   console.log(`Success! Created ${name} at ${appPath}`);
 
@@ -68,7 +66,7 @@ module.exports = (appPath, payload, originalDirectory) => {
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
     `  ${chalk.cyan(
-      `npm install && ${displayedCommand} login && ${displayedCommand} start`
+      `npm install && npm run login && npm run configure && npm run start`
     )}`
   );
   console.log();

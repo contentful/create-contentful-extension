@@ -1,12 +1,11 @@
 module.exports = (pkg, { version, language }) => {
   pkg.dependencies = pkg.dependencies || {};
   pkg.scripts = {
-    prestart:
-      'contentful space use && contentful extension update --src http://localhost:1234 --force',
+    prestart: 'contentful extension update --src http://localhost:1234 --force',
     start: 'contentful-extension-scripts start',
     build: 'contentful-extension-scripts build',
-    deploy:
-      'npm run build && contentful space use && contentful extension update --force',
+    deploy: 'npm run build && contentful extension update --force',
+    configure: 'contentful space use && contentful space environment use',
     login: 'contentful login',
     logout: 'contentful logout',
     help: 'contentful-extension-scripts help',
@@ -19,16 +18,16 @@ module.exports = (pkg, { version, language }) => {
     '@babel/preset-react': '7.0.0',
     '@contentful/contentful-extension-scripts': version,
     cssnano: '4.1.10',
-    'contentful-cli': '0.25.0',
+    'contentful-cli': '0.26.1',
   };
   pkg.dependencies = {
-    '@contentful/forma-36-fcss': '^0.0.15',
-    '@contentful/forma-36-react-components': '^2.10.1',
-    '@contentful/forma-36-tokens': '^0.2.2',
+    '@contentful/forma-36-fcss': '^0.0.16',
+    '@contentful/forma-36-react-components': '^2.10.3',
+    '@contentful/forma-36-tokens': '^0.2.3',
     'contentful-ui-extensions-sdk': '3.7.2',
     'prop-types': '^15.7.2',
-    react: '^16.8.4',
-    'react-dom': '^16.8.4',
+    react: '^16.8.5',
+    'react-dom': '^16.8.5',
   };
   pkg.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
 
