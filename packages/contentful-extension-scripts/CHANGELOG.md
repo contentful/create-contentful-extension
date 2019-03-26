@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.6.0...@contentful/contentful-extension-scripts@0.7.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* fixed renaming .gitignore to .npmignore during installation ([9b8342e](https://github.com/contentful/create-contentful-extension/commit/9b8342e))
+
+
+### Features
+
+* add configure command to select space and environment ([c859f33](https://github.com/contentful/create-contentful-extension/commit/c859f33))
+
+
+
+
+
 # [0.6.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.5.0...@contentful/contentful-extension-scripts@0.6.0) (2019-03-22)
 
 
