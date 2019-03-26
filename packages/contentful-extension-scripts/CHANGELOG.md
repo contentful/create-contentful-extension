@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.7.0...@contentful/contentful-extension-scripts@0.7.1) (2019-03-26)
+
+
+### Bug Fixes
+
+* enable hot reload in Typescript field example ([8ed90d7](https://github.com/contentful/create-contentful-extension/commit/8ed90d7))
+
+
+
+
+
 # [0.7.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.6.0...@contentful/contentful-extension-scripts@0.7.0) (2019-03-26)
 
 
