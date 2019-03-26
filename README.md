@@ -133,7 +133,7 @@ Yes, it's possible. Edit `prestart` and `start` scripts in package.json file acc
 
 ### I use development mode but my extension is not showing up. What's wrong?
 
-In development mode, extension is served from `http://localhost:1234`, but `app.contentful.com` is loaded via `https` protocol which leads to `mixed content` issue. While doing development you need to click **Load unsafe scripts** (Chrome) to enable serving extension from `http://localhost`.
+In development mode, extension is served from `http://localhost:1234`, but `app.contentful.com` is loaded via `https` protocol which leads the browser to prevent [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/fixing-mixed-content). While doing development you need to click **Load unsafe scripts** (Chrome) to enable serving extension from `http://localhost`.
 
 ### I'm not the biggest fan of disabling the mixed content setting in browsers. Can I use HTTPS in development mode?
 
