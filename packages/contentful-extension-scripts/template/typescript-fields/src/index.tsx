@@ -71,3 +71,8 @@ init(sdk => {
     document.getElementById('root')
   );
 });
+
+// Enabling hot reload
+if (module.hot) {
+  module.hot.accept();
+}
