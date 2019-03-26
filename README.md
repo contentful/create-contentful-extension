@@ -90,7 +90,9 @@ Ends your current session with the CLI tool.
 
 ### `npm run configure`
 
-Asks which space and environment you want to use for development and deployment. It saves your answers to local `.contentfulrc.json`
+Asks which space and environment you want to use for development and deployment. It saves your answers to local `.contentfulrc.json`.
+
+**Caution**: Do not commit `.contentfulrc.json` to your repository. It contains sensitive information and intended to be used only on your local machine.
 
 ### `npm run deploy`
 
@@ -113,6 +115,12 @@ Your environment will have everything you need to build a modern Contentful UI E
 Despite the fact that we encourage you to use React + Forma36 for building extensions, you can pick any framework and use it as you would use it with Parcel bundler.
 
 ## FAQ
+
+#### I want to use `test` environment for during the development. How can I set it up?
+
+Use `npm run configure` command. It asks what space and environment you'd like to use. The answers are saved in `.contentfulrc.json` file, located next to `package.json`.
+
+**Caution**: Do not commit `.contentfulrc.json` to your repository. It contains sensitive information and intended to be used only on your local machine.
 
 #### I use development mode but my extension is not showing up. What's wrong?
 
