@@ -116,17 +116,13 @@ Despite the fact that we encourage you to use React + Forma36 for building exten
 
 ## FAQ
 
-#### I want to use `test` environment for during the development. How can I set it up?
+### I want to use `test` environment for during the development. How can I set it up?
 
 Use `npm run configure` command. It asks what space and environment you'd like to use. The answers are saved in `.contentfulrc.json` file, located next to `package.json`.
 
 **Caution**: Do not commit `.contentfulrc.json` to your repository. It contains sensitive information and intended to be used only on your local machine.
 
-#### I use development mode but my extension is not showing up. What's wrong?
-
-In development mode, extension is served from `http://localhost:1234`, but `app.contentful.com` is loaded via `https` protocol which leads to `mixed content` issue. While doing development you need to click **Load unsafe scripts** (Chrome) to enable serving extension from `http://localhost`.
-
-#### I want to serve extension in development mode from custom port number (not default 1234). Is it possible?
+### I want to serve extension in development mode from custom port number (not default 1234). Is it possible?
 
 Yes, it's possible. Edit `prestart` and `start` scripts in package.json file according to the following example:
 
@@ -134,6 +130,33 @@ Yes, it's possible. Edit `prestart` and `start` scripts in package.json file acc
 "prestart": "contentful space use && contentful extension update --src http://localhost:8000 --force",
 "start": "contentful-extension-scripts start --port 8000",
 ```
+
+### I use development mode but my extension is not showing up. What's wrong?
+
+In development mode, extension is served from `http://localhost:1234`, but `app.contentful.com` is loaded via `https` protocol which leads to `mixed content` issue. While doing development you need to click **Load unsafe scripts** (Chrome) to enable serving extension from `http://localhost`.
+
+### I'm not the biggest fan of disabling the mixed content setting in browsers. Can I use HTTPS in development mode?
+
+Yes, you can serve your extension using HTTPS. Add `--https` to `start` command and update url in `prestart` command.
+
+```
+"prestart": "contentful extension update --src https://localhost:1234 --force",
+"start": "contentful-extension-scripts start --https",
+```
+
+It uses [Parcel HTTPS](https://parceljs.org/cli.html#enable-https) under the hood , which generates a self-signed certificate, you might have to configure your browser to allow self-signed certificates for localhost.
+
+### My extension is bigger than 512Kb. How can I deploy it for production usage?
+
+You can't use _Hosted by Contentful (`srcdoc`)_ hosted extension if the extension is bigger than 512Kb. But you can serve extension from any server using `src` property.
+
+Instead of using `npm run deploy`, add `--no-inline` to build command:
+
+```
+"build": "contentful-extension-scripts build --no-inline"
+```
+
+It generates minified and production-ready version of your extension. Upload `build` folder to GitHub pages, Netlify or any other hosting and use _Self-hosted (`src`)_ option to serve the extension from your own domain.
 
 ## Contributing
 
