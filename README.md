@@ -82,9 +82,9 @@ npm run configure
 npm run start
 ```
 
-When the development server is up and running open [https://app.contentful.com](https://app.contentful.com):
+When the development server is up and running open [https://app.contentful.com](https://app.contentful.com).
 
-- Go to `Settings` -> `Extensions` to verify that extension is installed in a development mode.
+Go to `Settings` -> `Extensions` to verify that extension is installed in a development mode.
 
 <p>
 <img src='./docs/step-1-extensions-list.png' width='800'>
@@ -94,19 +94,19 @@ When the development server is up and running open [https://app.contentful.com](
 <img src='./docs/step-2-extensions-details.png' width='800'>
 </p>
 
-- Go to `Content model` configuration
+Go to `Content model` configuration.
 
 <p>
 <img src='./docs/step-3-configure-field.png' width='800'>
 </p>
 
-- Select a field in the Content Type. Navigate to `Settings` > `Appearance` of the field. Assign the extension to a field.
+Select a field in the Content Type. Navigate to `Settings` > `Appearance` of the field. Assign the extension to a field.
 
 <p>
 <img src='./docs/step-4-configure-field-extension.png' width='800'>
 </p>
 
-- Go to the content of this Content Type and enable [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/fixing-mixed-content) at your browser so that development version that is served from your local machine could be rendered within `https://app.contentful.com`.
+Go to the content of this Content Type and enable [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/fixing-mixed-content) at your browser so that development version that is served from your local machine could be rendered within `https://app.contentful.com`.
 
 <p>
 <img src='./docs/step-5-extension-is-not-visible.png' width='800'>
@@ -182,6 +182,10 @@ Yes, you can serve your extension using HTTPS. Add `--https` to `start` command 
 ```
 
 It uses [Parcel HTTPS](https://parceljs.org/cli.html#enable-https) under the hood , which generates a self-signed certificate, you might have to configure your browser to allow self-signed certificates for localhost.
+
+### I generated my extension with `create-contentful-extension` several months ago but I'd like to use features that became available later. How can I upgrade?
+
+Just update `create-contentful-extension` dependency in your `package.json` to the latest one and check [https://github.com/contentful/create-contentful-extension/releases](Releases) to see if there were any breaking changes. Follow the instructions there.
 
 ### My extension is bigger than 512Kb. How can I deploy it for production usage?
 
