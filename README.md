@@ -9,13 +9,8 @@ If something doesn’t work, please [file an issue](https://github.com/contentfu
 ```sh
 npx @contentful/create-contentful-extension my-first-extension
 cd my-first-extension
-# install dependencies
 npm install
-# login to contentful
-npm run login
-# select what space and enviroment you'll be using for development and deployment
-npm run configure
-# start development server
+npm run login && npm run configure
 npm run start
 ```
 
@@ -23,6 +18,18 @@ npm run start
 
 - Node 8 or higher
 - NPM 5.2 and higher
+
+## What’s Included?
+
+Your environment will have everything you need to build a modern Contentful UI Extension with React:
+
+- React, JSX, ES6, TypeScript and all that supported by [Parcel](https://parceljs.org)
+- [Forma 36](https://f36.contentful.com/) - React component library for Contentful design system.
+- A live development server with hot reload.
+- A build script to bundle JS, CSS, and images for production by inlining everything to `srcdoc`
+- Hassle-free updates for the above tools with a single dependency.
+
+Despite the fact that we encourage you to use React + Forma36 for building extensions, you can pick any framework and use it as you would use it with Parcel bundler.
 
 ### Get Started Immediately
 
@@ -65,9 +72,51 @@ Once the installation is done, you can open your project folder:
 
 ```sh
 cd my-first-extension
+# install dependencies
+npm install
+# login to contentful
+npm run login
+# select what space and enviroment you'll be using for development and deployment
+npm run configure
+# starts development server and publishes the extension in a development mode
+npm run start
 ```
 
-Inside the newly created project, you can run some built-in commands:
+When the development server is up and running open [https://app.contentful.com](https://app.contentful.com):
+
+- Go to `Settings` -> `Extensions` to verify that extension is installed in a development mode.
+
+<p>
+<img src='./docs/step-1-extensions-list.png' width='800'>
+</p>
+
+<p>
+<img src='./docs/step-2-extensions-details.png' width='800'>
+</p>
+
+- Go to `Content model` configuration
+
+<p>
+<img src='./docs/step-3-configure-field.png' width='800'>
+</p>
+
+- Select a field in the Content Type. Navigate to `Settings` > `Appearance` of the field. Assign the extension to a field.
+
+<p>
+<img src='./docs/step-4-configure-field-extension.png' width='800'>
+</p>
+
+- Go to the content of this Content Type and enable [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/fixing-mixed-content) at your browser so that development version that is served from your local machine could be rendered within `https://app.contentful.com`.
+
+<p>
+<img src='./docs/step-5-extension-is-not-visible.png' width='800'>
+</p>
+
+<p>
+<img src='./docs/step-6-disable-mixed-content.png' width='600'>
+</p>
+
+## Commands
 
 ### `npm run start`
 
@@ -101,18 +150,6 @@ Bundles the extension for production and deploys bundled version to Contentful.
 ### `npm run help`
 
 Shows help information about `create-contentful-extension`.
-
-## What’s Included?
-
-Your environment will have everything you need to build a modern Contentful UI Extension with React:
-
-- React, JSX, ES6, TypeScript and all that supported by [Parcel](https://parceljs.org)
-- [Forma 36](https://f36.contentful.com/) - React component library for Contentful design system.
-- A live development server with hot reload.
-- A build script to bundle JS, CSS, and images for production by inlining everything to `srcdoc`
-- Hassle-free updates for the above tools with a single dependency.
-
-Despite the fact that we encourage you to use React + Forma36 for building extensions, you can pick any framework and use it as you would use it with Parcel bundler.
 
 ## FAQ
 
