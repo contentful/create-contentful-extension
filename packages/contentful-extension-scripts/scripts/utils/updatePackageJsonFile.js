@@ -18,25 +18,25 @@ module.exports = (pkg, { version, language }) => {
     '@babel/preset-react': '7.0.0',
     '@contentful/contentful-extension-scripts': version,
     cssnano: '4.1.10',
-    'contentful-cli': '0.26.1',
+    'contentful-cli': '0.26.2',
   };
   pkg.dependencies = {
-    '@contentful/forma-36-fcss': '^0.0.16',
-    '@contentful/forma-36-react-components': '^2.10.3',
-    '@contentful/forma-36-tokens': '^0.2.3',
+    '@contentful/forma-36-fcss': '^0.0.17',
+    '@contentful/forma-36-react-components': '^3.0.0',
+    '@contentful/forma-36-tokens': '^0.3.0',
     'contentful-ui-extensions-sdk': '3.7.2',
     'prop-types': '^15.7.2',
-    react: '^16.8.5',
-    'react-dom': '^16.8.5',
+    react: '^16.8.6',
+    'react-dom': '^16.8.6',
   };
   pkg.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
 
   if (language === 'typescript') {
     pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
-      '@types/react': '^16.8.8',
+      '@types/react': '^16.8.10',
       '@types/react-dom': '^16.8.3',
       '@types/webpack-env': '1.13.9',
-      typescript: '3.3.4000',
+      typescript: '3.4.1',
     });
   }
 
