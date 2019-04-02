@@ -27,7 +27,6 @@ Your environment will have everything you need to build a modern Contentful UI E
 - [Forma 36](https://f36.contentful.com/) - React component library for Contentful design system.
 - A live development server with hot reload.
 - A build script to bundle JS, CSS, and images for production by inlining everything to `srcdoc`
-- Hassle-free updates for the above tools with a single dependency.
 
 Despite the fact that we encourage you to use React + Forma36 for building extensions, you can pick any framework and use it as you would use it with Parcel bundler.
 
@@ -185,7 +184,7 @@ It uses [Parcel HTTPS](https://parceljs.org/cli.html#enable-https) under the hoo
 
 ### I generated my extension with `create-contentful-extension` several months ago but I'd like to use features that became available later. How can I upgrade?
 
-Just update `create-contentful-extension` dependency in your `package.json` to the latest one and check [https://github.com/contentful/create-contentful-extension/releases](Releases) to see if there were any breaking changes. Follow the instructions there.
+Just update `@contentful/contentful-extension-scripts` dependency in your `package.json` to the latest one and check [Releases](https://github.com/contentful/create-contentful-extension/releases) to see if there were any breaking changes. Follow the instructions there.
 
 ### My extension is bigger than 512Kb. How can I deploy it for production usage?
 
