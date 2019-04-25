@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.7.3...@contentful/contentful-extension-scripts@0.8.0) (2019-04-25)
+
+
+### Features
+
+* **contentful-extension-scripts:** allow to override publicUrl ([17c74ad](https://github.com/contentful/create-contentful-extension/commit/17c74ad)), closes [#29](https://github.com/contentful/create-contentful-extension/issues/29)
+
+
+
+
+
 ## [0.7.3](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.7.2...@contentful/contentful-extension-scripts@0.7.3) (2019-04-03)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
