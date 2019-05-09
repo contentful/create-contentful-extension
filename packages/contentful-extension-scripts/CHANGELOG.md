@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.8.0...@contentful/contentful-extension-scripts@0.9.0) (2019-05-09)
+
+
+### Features
+
+* added new Entry editor extension type ([ee18c3e](https://github.com/contentful/create-contentful-extension/commit/ee18c3e)), closes [#31](https://github.com/contentful/create-contentful-extension/issues/31)
+
+
+
+
+
 # [0.8.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.7.3...@contentful/contentful-extension-scripts@0.8.0) (2019-04-25)
 
 
