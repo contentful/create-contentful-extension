@@ -6,7 +6,6 @@ import { init, locations } from 'contentful-ui-extensions-sdk';
 import tokens from '@contentful/forma-36-tokens';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.css';
-import extension from '../extension.json';
 
 class DialogExtension extends React.Component {
   static propTypes = {
@@ -40,7 +39,7 @@ class SidebarExtension extends React.Component {
 
   onButtonClick = async () => {
     const result = await this.props.sdk.dialogs.openExtension({
-      id: extension.id,
+      id: this.props.sdk.ids.extension,
       width: 800,
       title: 'The same extension rendered in modal window',
     });

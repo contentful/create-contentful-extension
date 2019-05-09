@@ -10,7 +10,6 @@ import {
 import tokens from '@contentful/forma-36-tokens';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.css';
-import { id as extensionId } from '../extension.json';
 
 class DialogExtension extends React.Component<{ sdk: DialogExtensionSDK }> {
   render() {
@@ -36,7 +35,7 @@ class SidebarExtension extends React.Component<{ sdk: SidebarExtensionSDK }> {
 
   onButtonClick = async () => {
     const result = await this.props.sdk.dialogs.openExtension({
-      id: extensionId,
+      id: this.props.sdk.ids.extension,
       width: 800,
       title: 'The same extension rendered in modal window',
     });
