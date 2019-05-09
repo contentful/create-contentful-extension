@@ -1,0 +1,47 @@
+{
+  "name": "exampleOfCustomEntryExtension",
+  "description": "",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "title",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "body",
+      "name": "body",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "hasAbstract",
+      "name": "hasAbstract",
+      "type": "Boolean",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "abstract",
+      "name": "abstract",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ]
+}
