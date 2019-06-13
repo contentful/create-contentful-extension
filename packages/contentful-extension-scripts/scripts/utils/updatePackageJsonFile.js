@@ -1,7 +1,6 @@
 module.exports = (pkg, { version, language }) => {
   pkg.dependencies = pkg.dependencies || {};
   pkg.scripts = {
-    prestart: 'contentful extension update --src http://localhost:1234 --force',
     start: 'contentful-extension-scripts start',
     build: 'contentful-extension-scripts build',
     deploy: 'npm run build && contentful extension update --force',
