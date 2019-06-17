@@ -2,11 +2,9 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 module.exports = async (https = false, port = 1234) => {
-  const { stdout, stderr } = await exec(
+  await exec(
     `contentful extension update --src ${
       https ? 'https' : 'http'
     }://localhost:${port} --force`
   );
-  console.log('stdout:', stdout);
-  console.log('stderr:', stderr);
 };
