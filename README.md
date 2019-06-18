@@ -160,10 +160,9 @@ Use `npm run configure` command. It asks what space and environment you'd like t
 
 ### I want to serve extension in development mode from custom port number (not default 1234). Is it possible?
 
-Yes, it's possible. Edit `prestart` and `start` scripts in package.json file according to the following example:
+Yes, it's possible. Edit `start` scripts in package.json file according to the following example:
 
 ```json
-"prestart": "contentful space use && contentful extension update --src http://localhost:8000 --force",
 "start": "contentful-extension-scripts start --port 8000",
 ```
 
@@ -173,10 +172,9 @@ In development mode, extension is served from `http://localhost:1234`, but `app.
 
 ### I'm not the biggest fan of disabling the mixed content setting in browsers. Can I use HTTPS in development mode?
 
-Yes, you can serve your extension using HTTPS. Add `--https` to `start` command and update url in `prestart` command.
+Yes, you can serve your extension using HTTPS. Add `--https` to `start` command.
 
 ```
-"prestart": "contentful extension update --src https://localhost:1234 --force",
 "start": "contentful-extension-scripts start --https",
 ```
 
