@@ -17,11 +17,11 @@ module.exports = (pkg, { version, language }) => {
     '@babel/preset-react': '7.0.0',
     '@contentful/contentful-extension-scripts': version,
     cssnano: '4.1.10',
-    'contentful-cli': '0.26.5',
+    'contentful-cli': '0.27.0',
   };
   pkg.dependencies = {
-    '@contentful/forma-36-fcss': '^0.0.18',
-    '@contentful/forma-36-react-components': '^3.7.0',
+    '@contentful/forma-36-fcss': '^0.0.20',
+    '@contentful/forma-36-react-components': '^3.11.2',
     '@contentful/forma-36-tokens': '^0.3.0',
     'contentful-ui-extensions-sdk': '3.8.0',
     'prop-types': '^15.7.2',
@@ -35,7 +35,7 @@ module.exports = (pkg, { version, language }) => {
       '@types/react': '^16.8.17',
       '@types/react-dom': '^16.8.4',
       '@types/webpack-env': '1.13.9',
-      typescript: '3.4.5',
+      typescript: '3.5.2',
     });
   }
 
