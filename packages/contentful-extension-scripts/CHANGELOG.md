@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.9.0...@contentful/contentful-extension-scripts@0.10.0) (2019-06-18)
+
+
+### Features
+
+* Add support for multiple extensions in dev mode ([#34](https://github.com/contentful/create-contentful-extension/issues/34)) ([875b44a](https://github.com/contentful/create-contentful-extension/commit/875b44a))
+
+
+
+
+
 # [0.9.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.8.0...@contentful/contentful-extension-scripts@0.9.0) (2019-05-09)
 
 
