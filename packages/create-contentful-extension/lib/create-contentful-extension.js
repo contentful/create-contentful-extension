@@ -104,6 +104,7 @@ const createExtension = async (name, verbose) => {
         { name: 'Field extension', value: 'fields' },
         { name: 'Sidebar extension', value: 'sidebar' },
         { name: 'Entry editor extension', value: 'entry' },
+        { name: 'Page extension', value: 'page' },
       ],
     },
     {
