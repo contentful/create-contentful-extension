@@ -21,6 +21,7 @@ module.exports = (appPath, payload, originalDirectory) => {
   appPackage = updatePackageJsonFile(appPackage, {
     version,
     language: currentLanguage,
+    type,
   });
 
   fs.writeFileSync(

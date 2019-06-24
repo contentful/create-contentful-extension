@@ -1,4 +1,4 @@
-module.exports = (pkg, { version, language }) => {
+module.exports = (pkg, { version, language, type }) => {
   pkg.dependencies = pkg.dependencies || {};
   pkg.scripts = {
     start: 'contentful-extension-scripts start',
@@ -17,18 +17,34 @@ module.exports = (pkg, { version, language }) => {
     '@babel/preset-react': '7.0.0',
     '@contentful/contentful-extension-scripts': version,
     cssnano: '4.1.10',
-    'contentful-cli': '0.27.0',
+    'contentful-cli': '0.28.0',
   };
   pkg.dependencies = {
     '@contentful/forma-36-fcss': '^0.0.20',
     '@contentful/forma-36-react-components': '^3.11.2',
     '@contentful/forma-36-tokens': '^0.3.0',
-    'contentful-ui-extensions-sdk': '3.8.0',
+    'contentful-ui-extensions-sdk': '3.9.0',
     'prop-types': '^15.7.2',
     react: '^16.8.6',
     'react-dom': '^16.8.6',
   };
+
   pkg.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
+
+  if (type === 'page') {
+    pkg.dependencies = Object.assign({}, pkg.dependencies, {
+      history: '4.9.0',
+      'react-router': '5.0.1',
+      'react-router-dom': '5.0.1',
+    });
+    if (language === 'typescript') {
+      pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
+        '@types/history': '4.7.2',
+        '@types/react-router': '5.0.2',
+        '@types/react-router-dom': '4.3.4',
+      });
+    }
+  }
 
   if (language === 'typescript') {
     pkg.devDependencies = Object.assign({}, pkg.devDependencies, {

@@ -4,7 +4,7 @@ module.exports = (appName, type, fields) => {
     name: appName,
     srcdoc: './build/index.html',
   };
-  if (type === 'sidebar') {
+  if (type === 'sidebar' || type === 'page') {
     result.sidebar = true;
   } else if (type === 'fields') {
     result.fieldTypes = fields || [];
