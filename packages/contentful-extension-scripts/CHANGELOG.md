@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.10.0...@contentful/contentful-extension-scripts@0.11.0) (2019-06-24)
+
+
+### Features
+
+* Added Page extension JavaScript and TypeScript examples ([#36](https://github.com/contentful/create-contentful-extension/issues/36)) ([2ff6107](https://github.com/contentful/create-contentful-extension/commit/2ff6107))
+
+
+
+
+
 # [0.10.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.9.0...@contentful/contentful-extension-scripts@0.10.0) (2019-06-18)
 
 
