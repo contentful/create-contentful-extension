@@ -3,6 +3,8 @@ module.exports = (pkg, { version, language, type }) => {
   pkg.scripts = {
     start: 'contentful-extension-scripts start',
     build: 'contentful-extension-scripts build',
+    test: 'contentful-extension-scripts test --env=jsdom --watch',
+    'test:coverage': 'contentful-extension-scripts test --env=jsdom --coverage',
     deploy: 'npm run build && contentful extension update --force',
     configure: 'contentful space use && contentful space environment use',
     login: 'contentful login',
@@ -16,12 +18,13 @@ module.exports = (pkg, { version, language, type }) => {
     '@babel/preset-env': '7.3.4',
     '@babel/preset-react': '7.0.0',
     '@contentful/contentful-extension-scripts': version,
+    '@testing-library/react': '8.0.4',
     cssnano: '4.1.10',
-    'contentful-cli': '0.28.0',
+    'contentful-cli': '0.33.1',
   };
   pkg.dependencies = {
     '@contentful/forma-36-fcss': '^0.0.20',
-    '@contentful/forma-36-react-components': '^3.11.2',
+    '@contentful/forma-36-react-components': '^3.11.3',
     '@contentful/forma-36-tokens': '^0.3.0',
     'contentful-ui-extensions-sdk': '3.9.0',
     'prop-types': '^15.7.2',
@@ -48,10 +51,11 @@ module.exports = (pkg, { version, language, type }) => {
 
   if (language === 'typescript') {
     pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
+      typescript: '3.5.2',
+      '@types/jest': '24.0.15',
       '@types/react': '^16.8.17',
       '@types/react-dom': '^16.8.4',
       '@types/webpack-env': '1.13.9',
-      typescript: '3.5.2',
     });
   }
 

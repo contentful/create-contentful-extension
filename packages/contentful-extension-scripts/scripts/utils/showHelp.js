@@ -13,6 +13,11 @@ module.exports = () => {
   console.log(chalk.cyan(`  npm run build`));
   console.log('    Bundles the extension for production.');
   console.log();
+  console.log(chalk.cyan(`  npm run test`));
+  console.log(
+    '    Run jest runner in watch mode. Passes through all flats directly to Jest'
+  );
+  console.log();
   console.log(chalk.cyan(`  npm run configure`));
   console.log(
     '    Asks which space and environment you want to use for development and deployment.'

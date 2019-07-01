@@ -6,7 +6,7 @@ import { init } from 'contentful-ui-extensions-sdk';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.css';
 
-class App extends React.Component {
+export class App extends React.Component {
   static propTypes = {
     sdk: PropTypes.object.isRequired,
   };
@@ -16,7 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: props.sdk.field.getValue(),
+      value: props.sdk.field.getValue() || '',
     };
   }
 
@@ -55,6 +55,7 @@ class App extends React.Component {
         width="large"
         type="text"
         id="my-field"
+        testId="my-field"
         value={this.state.value}
         onChange={this.onChange}
       />

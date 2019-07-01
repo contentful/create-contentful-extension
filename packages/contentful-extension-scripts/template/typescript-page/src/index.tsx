@@ -17,7 +17,7 @@ import {
   Button,
 } from '@contentful/forma-36-react-components';
 import '@contentful/forma-36-react-components/dist/styles.css';
-import '@contentful/forma-36-fcss';
+import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
 
 function MainPage() {
@@ -49,7 +49,7 @@ interface InvocationParams {
   path: string;
 }
 
-class PageExtension extends React.Component<PageExtensionProps> {
+export class PageExtension extends React.Component<PageExtensionProps> {
   history: MemoryHistory;
 
   constructor(props: PageExtensionProps) {
@@ -108,13 +108,14 @@ class PageExtension extends React.Component<PageExtensionProps> {
   };
 }
 
-function SidebarExtension(props: { sdk: SidebarExtensionSDK }) {
+export function SidebarExtension(props: { sdk: SidebarExtensionSDK }) {
   React.useEffect(() => {
     return props.sdk.window.startAutoResizer();
   }, [props.sdk]);
 
   return (
     <Button
+      testId="open-page-extension"
       onClick={() => {
         props.sdk.navigator.openPageExtension({ path: '/' });
       }}
