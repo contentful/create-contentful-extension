@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.11.0...@contentful/contentful-extension-scripts@0.12.0) (2019-07-02)
+
+
+### Features
+
+* add build-in Jest for testing ([#38](https://github.com/contentful/create-contentful-extension/issues/38)) ([6eb49ce](https://github.com/contentful/create-contentful-extension/commit/6eb49ce))
+
+
+
+
+
 # [0.11.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.10.0...@contentful/contentful-extension-scripts@0.11.0) (2019-06-24)
 
 
