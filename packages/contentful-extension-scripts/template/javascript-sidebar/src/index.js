@@ -9,7 +9,7 @@ import './index.css';
 
 export class DialogExtension extends React.Component {
   static propTypes = {
-    sdk: PropTypes.object.isRequired,
+    sdk: PropTypes.object.isRequired
   };
 
   render() {
@@ -20,8 +20,7 @@ export class DialogExtension extends React.Component {
           buttonType="muted"
           onClick={() => {
             this.props.sdk.close('data from modal dialog');
-          }}
-        >
+          }}>
           Close modal
         </Button>
       </div>
@@ -31,7 +30,7 @@ export class DialogExtension extends React.Component {
 
 export class SidebarExtension extends React.Component {
   static propTypes = {
-    sdk: PropTypes.object.isRequired,
+    sdk: PropTypes.object.isRequired
   };
 
   componentDidMount() {
@@ -41,7 +40,7 @@ export class SidebarExtension extends React.Component {
   onButtonClick = async () => {
     const result = await this.props.sdk.dialogs.openExtension({
       width: 800,
-      title: 'The same extension rendered in modal window',
+      title: 'The same extension rendered in modal window'
     });
     console.log(result);
   };
@@ -52,8 +51,7 @@ export class SidebarExtension extends React.Component {
         buttonType="positive"
         isFullWidth={true}
         testId="open-dialog"
-        onClick={this.onButtonClick}
-      >
+        onClick={this.onButtonClick}>
         Click on me to open dialog extension
       </Button>
     );
@@ -62,15 +60,9 @@ export class SidebarExtension extends React.Component {
 
 export const initialize = sdk => {
   if (sdk.location.is(locations.LOCATION_DIALOG)) {
-    ReactDOM.render(
-      <DialogExtension sdk={sdk} />,
-      document.getElementById('root')
-    );
+    ReactDOM.render(<DialogExtension sdk={sdk} />, document.getElementById('root'));
   } else {
-    ReactDOM.render(
-      <SidebarExtension sdk={sdk} />,
-      document.getElementById('root')
-    );
+    ReactDOM.render(<SidebarExtension sdk={sdk} />, document.getElementById('root'));
   }
 };
 

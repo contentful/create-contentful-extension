@@ -7,9 +7,7 @@ const chalk = require('chalk');
 module.exports = async (port, https) => {
   console.log(chalk.cyan(`Installing extension in development mode...`));
   const { stdout } = await exec(
-    `contentful extension update --src ${
-      https ? 'https' : 'http'
-    }://localhost:${port} --force`
+    `contentful extension update --src ${https ? 'https' : 'http'}://localhost:${port} --force`
   );
   console.log(stdout);
 };

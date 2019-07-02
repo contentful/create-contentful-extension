@@ -3,7 +3,7 @@ import { App } from './index';
 import { render, cleanup, fireEvent, configure } from '@testing-library/react';
 
 configure({
-  testIdAttribute: 'data-test-id',
+  testIdAttribute: 'data-test-id'
 });
 
 function renderComponent(sdk) {
@@ -16,9 +16,9 @@ const sdk = {
       title: { getValue: jest.fn(), setValue: jest.fn() },
       body: { getValue: jest.fn(), setValue: jest.fn() },
       abstract: { getValue: jest.fn(), setValue: jest.fn() },
-      hasAbstract: { getValue: jest.fn(), setValue: jest.fn() },
-    },
-  },
+      hasAbstract: { getValue: jest.fn(), setValue: jest.fn() }
+    }
+  }
 };
 
 describe('App', () => {
@@ -40,11 +40,9 @@ describe('App', () => {
     expect(getByTestId('field-abstract').value).toEqual('abstract-value');
 
     fireEvent.change(getByTestId('field-body'), {
-      target: { value: 'new-body-value' },
+      target: { value: 'new-body-value' }
     });
 
-    expect(sdk.entry.fields.body.setValue).toHaveBeenCalledWith(
-      'new-body-value'
-    );
+    expect(sdk.entry.fields.body.setValue).toHaveBeenCalledWith('new-body-value');
   });
 });

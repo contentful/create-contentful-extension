@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { Router, Switch, Route, Link } from 'react-router-dom';
-import { MemoryHistory } from 'history';
-import { createMemoryHistory } from 'history';
+import { MemoryHistory, createMemoryHistory } from 'history';
 import {
   init,
   locations,
   SidebarExtensionSDK,
-  PageExtensionSDK,
+  PageExtensionSDK
 } from 'contentful-ui-extensions-sdk';
-import {
-  Tab,
-  Tabs,
-  TabPanel,
-  Heading,
-  Button,
-} from '@contentful/forma-36-react-components';
+import { Tab, Tabs, TabPanel, Heading, Button } from '@contentful/forma-36-react-components';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
@@ -55,12 +48,11 @@ export class PageExtension extends React.Component<PageExtensionProps> {
   constructor(props: PageExtensionProps) {
     super(props);
 
-    const invocationParams = props.sdk.parameters
-      .invocation as InvocationParams;
+    const invocationParams = props.sdk.parameters.invocation as InvocationParams;
 
-    const path = (this.history = createMemoryHistory({
-      initialEntries: [invocationParams.path],
-    }));
+    this.history = createMemoryHistory({
+      initialEntries: [invocationParams.path]
+    });
 
     this.history.listen(location => {
       this.props.sdk.navigator.openPageExtension({ path: location.pathname });
@@ -80,8 +72,7 @@ export class PageExtension extends React.Component<PageExtensionProps> {
                     selected={props.location.pathname === '/'}
                     onSelect={() => {
                       props.history.push('/');
-                    }}
-                  >
+                    }}>
                     Main
                   </Tab>
                   <Tab
@@ -89,8 +80,7 @@ export class PageExtension extends React.Component<PageExtensionProps> {
                     selected={props.location.pathname === '/other'}
                     onSelect={() => {
                       props.history.push('/other');
-                    }}
-                  >
+                    }}>
                     Other
                   </Tab>
                 </>
@@ -118,8 +108,7 @@ export function SidebarExtension(props: { sdk: SidebarExtensionSDK }) {
       testId="open-page-extension"
       onClick={() => {
         props.sdk.navigator.openPageExtension({ path: '/' });
-      }}
-    >
+      }}>
       Open page extension
     </Button>
   );
@@ -127,15 +116,9 @@ export function SidebarExtension(props: { sdk: SidebarExtensionSDK }) {
 
 init(sdk => {
   if (sdk.location.is(locations.LOCATION_PAGE)) {
-    render(
-      <PageExtension sdk={sdk as PageExtensionSDK} />,
-      document.getElementById('root')
-    );
+    render(<PageExtension sdk={sdk as PageExtensionSDK} />, document.getElementById('root'));
   } else if (sdk.location.is(locations.LOCATION_ENTRY_SIDEBAR)) {
-    render(
-      <SidebarExtension sdk={sdk as SidebarExtensionSDK} />,
-      document.getElementById('root')
-    );
+    render(<SidebarExtension sdk={sdk as SidebarExtensionSDK} />, document.getElementById('root'));
   } else {
     return null;
   }

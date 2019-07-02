@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import { render, fireEvent, cleanup, configure } from '@testing-library/react';
 import { SidebarExtension } from './index';
 
 configure({
-  testIdAttribute: 'data-test-id',
+  testIdAttribute: 'data-test-id'
 });
 
 describe('SidebarExtension', () => {
@@ -12,11 +14,11 @@ describe('SidebarExtension', () => {
   it('render button', () => {
     const sdk: any = {
       window: {
-        startAutoResizer: jest.fn(),
+        startAutoResizer: jest.fn()
       },
       navigator: {
-        openPageExtension: jest.fn(),
-      },
+        openPageExtension: jest.fn()
+      }
     };
     const { getByTestId } = render(<SidebarExtension sdk={sdk} />);
 
@@ -25,7 +27,7 @@ describe('SidebarExtension', () => {
     fireEvent.click(getByTestId('open-page-extension'));
 
     expect(sdk.navigator.openPageExtension).toHaveBeenCalledWith({
-      path: '/',
+      path: '/'
     });
   });
 });

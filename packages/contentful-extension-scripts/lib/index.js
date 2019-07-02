@@ -23,9 +23,7 @@ switch (script) {
   case 'help': {
     const result = spawn.sync(
       'node',
-      nodeArgs
-        .concat(require.resolve(`../scripts/${script}`))
-        .concat(args.slice(scriptIndex + 1)),
+      nodeArgs.concat(require.resolve(`../scripts/${script}`)).concat(args.slice(scriptIndex + 1)),
       { stdio: 'inherit' }
     );
     if (result.signal) {
@@ -45,6 +43,7 @@ switch (script) {
       process.exit(1);
     }
     process.exit(result.status);
+    break;
   }
   default:
     console.log(`Unknown script "${script}".`);

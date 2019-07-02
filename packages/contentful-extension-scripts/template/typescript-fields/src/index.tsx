@@ -17,7 +17,7 @@ export class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {
-      value: props.sdk.field.getValue() || '',
+      value: props.sdk.field.getValue() || ''
     };
   }
 
@@ -27,9 +27,7 @@ export class App extends React.Component<AppProps, AppState> {
     this.props.sdk.window.startAutoResizer();
 
     // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
-    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(
-      this.onExternalChange
-    );
+    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange);
   }
 
   componentWillUnmount() {
@@ -42,13 +40,13 @@ export class App extends React.Component<AppProps, AppState> {
     this.setState({ value });
   };
 
-  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;
     this.setState({ value });
     if (value) {
-      this.props.sdk.field.setValue(value);
+      await this.props.sdk.field.setValue(value);
     } else {
-      this.props.sdk.field.removeValue();
+      await this.props.sdk.field.removeValue();
     }
   };
 
@@ -67,10 +65,7 @@ export class App extends React.Component<AppProps, AppState> {
 }
 
 init(sdk => {
-  render(
-    <App sdk={sdk as FieldExtensionSDK} />,
-    document.getElementById('root')
-  );
+  render(<App sdk={sdk as FieldExtensionSDK} />, document.getElementById('root'));
 });
 
 /**

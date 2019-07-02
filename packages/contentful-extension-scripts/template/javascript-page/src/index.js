@@ -4,13 +4,7 @@ import PropTypes from 'prop-types';
 import { Router, Switch, Route, Link } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { init, locations } from 'contentful-ui-extensions-sdk';
-import {
-  Tab,
-  Tabs,
-  TabPanel,
-  Heading,
-  Button,
-} from '@contentful/forma-36-react-components';
+import { Tab, Tabs, TabPanel, Heading, Button } from '@contentful/forma-36-react-components';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
@@ -40,7 +34,7 @@ export class PageExtension extends React.Component {
   constructor(props) {
     super(props);
     this.history = createMemoryHistory({
-      initialEntries: [props.sdk.parameters.invocation.path],
+      initialEntries: [props.sdk.parameters.invocation.path]
     });
     this.history.listen(location => {
       this.props.sdk.navigator.openPageExtension({ path: location.pathname });
@@ -60,8 +54,7 @@ export class PageExtension extends React.Component {
                     selected={props.location.pathname === '/'}
                     onSelect={() => {
                       props.history.push('/');
-                    }}
-                  >
+                    }}>
                     Main
                   </Tab>
                   <Tab
@@ -69,8 +62,7 @@ export class PageExtension extends React.Component {
                     selected={props.location.pathname === '/other'}
                     onSelect={() => {
                       props.history.push('/other');
-                    }}
-                  >
+                    }}>
                     Other
                   </Tab>
                 </>
@@ -89,7 +81,7 @@ export class PageExtension extends React.Component {
 }
 
 PageExtension.propTypes = {
-  sdk: PropTypes.object.isRequired,
+  sdk: PropTypes.object.isRequired
 };
 
 export function SidebarExtension(props) {
@@ -102,15 +94,14 @@ export function SidebarExtension(props) {
       testId="open-page-extension"
       onClick={() => {
         props.sdk.navigator.openPageExtension({ path: '/' });
-      }}
-    >
+      }}>
       Open page extension
     </Button>
   );
 }
 
 SidebarExtension.propTypes = {
-  sdk: PropTypes.object.isRequired,
+  sdk: PropTypes.object.isRequired
 };
 
 init(sdk => {

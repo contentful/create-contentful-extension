@@ -8,13 +8,11 @@ module.exports = function createJestConfig() {
       '^.+\\.(ts|tsx)?$': require.resolve('ts-jest/dist'),
       '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': require.resolve(
         './jestFileTransform.js'
-      ),
+      )
     },
-    transformIgnorePatterns: [
-      '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|tsx|ts)$',
-    ],
+    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|tsx|ts)$'],
     moduleNameMapper: {
-      '\\.(css|less|scss)$': require.resolve('identity-obj-proxy'),
+      '\\.(css|less|scss)$': require.resolve('identity-obj-proxy')
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
@@ -25,8 +23,8 @@ module.exports = function createJestConfig() {
     coverageDirectory: paths.coverage,
     watchPlugins: [
       require.resolve('jest-watch-typeahead/filename'),
-      require.resolve('jest-watch-typeahead/testname'),
-    ],
+      require.resolve('jest-watch-typeahead/testname')
+    ]
   };
 
   return config;

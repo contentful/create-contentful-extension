@@ -6,14 +6,14 @@ module.exports = {
     'eslint:recommended',
     'prettier',
     'prettier/babel',
-    'plugin:you-dont-need-lodash-underscore/all',
+    'plugin:you-dont-need-lodash-underscore/all'
   ],
   env: {
-    es6: true,
+    es6: true
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
     'node/no-unsupported-features/es-syntax': 'off',
@@ -25,14 +25,14 @@ module.exports = {
           'bluebird',
           {
             name: 'moment',
-            message: 'Use date-fns or Luxon instead!',
+            message: 'Use date-fns or Luxon instead!'
           },
           {
             name: 'lodash',
-            message: 'Use lodash-es instead!',
-          },
-        ],
-      },
-    ],
-  },
+            message: 'Use lodash-es instead!'
+          }
+        ]
+      }
+    ]
+  }
 };
