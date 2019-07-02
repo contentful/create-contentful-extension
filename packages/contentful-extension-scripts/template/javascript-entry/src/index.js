@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 import {
   DisplayText,
@@ -8,7 +9,7 @@ import {
   Textarea,
   FieldGroup,
   RadioButtonField,
-  Form,
+  Form
 } from '@contentful/forma-36-react-components';
 import { init, locations } from 'contentful-ui-extensions-sdk';
 import '@contentful/forma-36-react-components/dist/styles.css';
@@ -26,6 +27,10 @@ import './index.css';
  */
 
 export class App extends React.Component {
+  static propTypes = {
+    sdk: PropTypes.object.isRequired
+  };
+
   constructor(props) {
     super(props);
 
@@ -33,7 +38,7 @@ export class App extends React.Component {
       title: props.sdk.entry.fields.title.getValue(),
       body: props.sdk.entry.fields.body.getValue(),
       abstract: props.sdk.entry.fields.abstract.getValue(),
-      hasAbstract: props.sdk.entry.fields.hasAbstract.getValue() || false,
+      hasAbstract: props.sdk.entry.fields.hasAbstract.getValue() || false
     };
   }
 
@@ -66,8 +71,7 @@ export class App extends React.Component {
       <Form className="f36-margin--l">
         <DisplayText>Entry extension demo</DisplayText>
         <Paragraph>
-          This demo uses a single UI Extension to render the whole editor for an
-          entry.
+          This demo uses a single UI Extension to render the whole editor for an entry.
         </Paragraph>
         <SectionHeading>Title</SectionHeading>
         <TextInput
@@ -76,11 +80,7 @@ export class App extends React.Component {
           value={this.state.title}
         />
         <SectionHeading>Body</SectionHeading>
-        <Textarea
-          testId="field-body"
-          onChange={this.onBodyChangeHandler}
-          value={this.state.body}
-        />
+        <Textarea testId="field-body" onChange={this.onBodyChangeHandler} value={this.state.body} />
         <SectionHeading>Has abstract?</SectionHeading>
         <FieldGroup row={false}>
           <RadioButtonField

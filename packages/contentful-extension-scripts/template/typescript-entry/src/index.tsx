@@ -8,13 +8,9 @@ import {
   Textarea,
   FieldGroup,
   RadioButtonField,
-  Form,
+  Form
 } from '@contentful/forma-36-react-components';
-import {
-  init,
-  locations,
-  EditorExtensionSDK,
-} from 'contentful-ui-extensions-sdk';
+import { init, locations, EditorExtensionSDK } from 'contentful-ui-extensions-sdk';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
@@ -48,32 +44,32 @@ export class App extends React.Component<AppProps, AppState> {
       title: props.sdk.entry.fields.title.getValue(),
       body: props.sdk.entry.fields.body.getValue(),
       abstract: props.sdk.entry.fields.abstract.getValue(),
-      hasAbstract: props.sdk.entry.fields.hasAbstract.getValue() || false,
+      hasAbstract: props.sdk.entry.fields.hasAbstract.getValue() || false
     };
   }
 
-  onTitleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  onTitleChangeHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     this.setState({ title: value });
-    this.props.sdk.entry.fields.title.setValue(value);
+    await this.props.sdk.entry.fields.title.setValue(value);
   };
 
-  onBodyChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  onBodyChangeHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     this.setState({ body: value });
-    this.props.sdk.entry.fields.body.setValue(value);
+    await this.props.sdk.entry.fields.body.setValue(value);
   };
 
-  onAbstractChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  onAbstractChangeHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     this.setState({ abstract: value });
-    this.props.sdk.entry.fields.abstract.setValue(value);
+    await this.props.sdk.entry.fields.abstract.setValue(value);
   };
 
-  onHasAbstractChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  onHasAbstractChangeHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const hasAbstract = event.target.value === 'yes';
     this.setState({ hasAbstract });
-    this.props.sdk.entry.fields.hasAbstract.setValue(hasAbstract);
+    await this.props.sdk.entry.fields.hasAbstract.setValue(hasAbstract);
   };
 
   render() {
@@ -81,8 +77,7 @@ export class App extends React.Component<AppProps, AppState> {
       <Form className="f36-margin--l">
         <DisplayText>Entry extension demo</DisplayText>
         <Paragraph>
-          This demo uses a single UI Extension to render the whole editor for an
-          entry.
+          This demo uses a single UI Extension to render the whole editor for an entry.
         </Paragraph>
         <SectionHeading>Title</SectionHeading>
         <TextInput
@@ -91,11 +86,7 @@ export class App extends React.Component<AppProps, AppState> {
           value={this.state.title}
         />
         <SectionHeading>Body</SectionHeading>
-        <Textarea
-          testId="field-body"
-          onChange={this.onBodyChangeHandler}
-          value={this.state.body}
-        />
+        <Textarea testId="field-body" onChange={this.onBodyChangeHandler} value={this.state.body} />
         <SectionHeading>Has abstract?</SectionHeading>
         <FieldGroup row={false}>
           <RadioButtonField
@@ -132,10 +123,7 @@ export class App extends React.Component<AppProps, AppState> {
 
 init(sdk => {
   if (sdk.location.is(locations.LOCATION_ENTRY_EDITOR)) {
-    render(
-      <App sdk={sdk as EditorExtensionSDK} />,
-      document.getElementById('root')
-    );
+    render(<App sdk={sdk as EditorExtensionSDK} />, document.getElementById('root'));
   }
 });
 

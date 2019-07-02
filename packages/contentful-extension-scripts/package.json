@@ -32,6 +32,9 @@
   "bugs": {
     "url": "https://github.com/contentful/create-contentful-extension/issues"
   },
+  "devDependencies": {
+    "eslint": "6.0.1"
+  },
   "dependencies": {
     "babel-jest": "^24.8.0",
     "chalk": "2.4.2",

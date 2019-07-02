@@ -8,7 +8,7 @@ import './index.css';
 
 export class App extends React.Component {
   static propTypes = {
-    sdk: PropTypes.object.isRequired,
+    sdk: PropTypes.object.isRequired
   };
 
   detachExternalChangeHandler = null;
@@ -16,7 +16,7 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: props.sdk.field.getValue() || '',
+      value: props.sdk.field.getValue() || ''
     };
   }
 
@@ -24,9 +24,7 @@ export class App extends React.Component {
     this.props.sdk.window.startAutoResizer();
 
     // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
-    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(
-      this.onExternalChange
-    );
+    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange);
   }
 
   componentWillUnmount() {

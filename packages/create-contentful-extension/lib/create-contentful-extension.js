@@ -23,18 +23,12 @@ const program = new commander.Command(packageJson.name)
 
 if (typeof projectName === 'undefined') {
   console.error('Please specify the extension folder:');
-  console.log(
-    `  ${chalk.cyan(program.name())} ${chalk.green('<extension-folder>')}`
-  );
+  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('<extension-folder>')}`);
   console.log();
   console.log('For example:');
-  console.log(
-    `  ${chalk.cyan(program.name())} ${chalk.green('my-contentful-extension')}`
-  );
+  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('my-contentful-extension')}`);
   console.log();
-  console.log(
-    `Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`
-  );
+  console.log(`Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`);
   process.exit(1);
 }
 
@@ -50,7 +44,7 @@ function install(root, dependencies, verbose, isDev) {
       isDev ? '--save-dev' : '--save',
       '--save-exact',
       '--loglevel',
-      'error',
+      'error'
     ].concat(dependencies);
 
     if (verbose) {
@@ -61,7 +55,7 @@ function install(root, dependencies, verbose, isDev) {
     child.on('close', code => {
       if (code !== 0) {
         reject({
-          command: `${command} ${args.join(' ')}`,
+          command: `${command} ${args.join(' ')}`
         });
         return;
       }
@@ -71,10 +65,13 @@ function install(root, dependencies, verbose, isDev) {
 }
 
 function run(root, payload, verbose, originalDirectory) {
-  const devDependencies = [
-    // path.resolve('./packages/contentful-extension-scripts'),
-    '@contentful/contentful-extension-scripts',
-  ];
+  const devDependencies =
+    process.env.LOCAL_TEST === 'true'
+      ? [
+          path.resolve('./packages/contentful-extension-scripts'),
+          path.resolve('./packages/eslint-config-extension')
+        ]
+      : ['@contentful/contentful-extension-scripts', '@contentful/eslint-config-extension'];
 
   return install(root, devDependencies, verbose, true).then(() => {
     const init = require(`${root}/node_modules/@contentful/contentful-extension-scripts/scripts/init.js`);
@@ -104,8 +101,8 @@ const createExtension = async (name, verbose) => {
         { name: 'Field extension', value: 'fields' },
         { name: 'Sidebar extension', value: 'sidebar' },
         { name: 'Entry editor extension', value: 'entry' },
-        { name: 'Page extension', value: 'page' },
-      ],
+        { name: 'Page extension', value: 'page' }
+      ]
     },
     {
       type: 'checkbox',
@@ -123,7 +120,7 @@ const createExtension = async (name, verbose) => {
         { name: 'Entry' },
         { name: 'Entries' },
         { name: 'Asset' },
-        { name: 'Assets' },
+        { name: 'Assets' }
       ],
       when: function(answers) {
         return answers.type === 'fields';
@@ -133,7 +130,7 @@ const createExtension = async (name, verbose) => {
           return 'You must choose at least one field type.';
         }
         return true;
-      },
+      }
     },
     {
       type: 'list',
@@ -141,9 +138,9 @@ const createExtension = async (name, verbose) => {
       message: 'What language you want to use to develop extension:',
       choices: [
         { name: 'JavaScript', value: 'javascript' },
-        { name: 'TypeScript', value: 'typescript' },
-      ],
-    },
+        { name: 'TypeScript', value: 'typescript' }
+      ]
+    }
   ]);
 
   fs.writeFileSync(
@@ -152,7 +149,7 @@ const createExtension = async (name, verbose) => {
       {
         name: appName,
         version: '0.1.0',
-        private: true,
+        private: true
       },
       null,
       2
@@ -166,7 +163,7 @@ const createExtension = async (name, verbose) => {
       name: appName,
       type: answers.type,
       fields: answers.fields || [],
-      language: answers.language,
+      language: answers.language
     },
     verbose,
     originalDirectory

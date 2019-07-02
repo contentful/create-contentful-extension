@@ -28,7 +28,7 @@ const options = {
   hmrHostname: '', // A hostname for hot module reload, default to ''
   detailedReport: false, // Prints a detailed report of the bundles, assets, filesizes and times, defaults to false, reports are only printed if watch is disabled
   https: https, // This flag generates a self-signed certificate, you might have to configure your browser to allow self-signed certificates for localhost
-  autoInstall: false, // Disable auto install
+  autoInstall: false // Disable auto install
 };
 
 const bundler = new Bundler(entry, options);

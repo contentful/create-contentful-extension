@@ -22,9 +22,7 @@ process.on('unhandledRejection', err => {
 
 argv.push(
   '--config',
-  JSON.stringify(
-    Object.assign({}, createJestConfig(), appPackageJson.jest || {})
-  )
+  JSON.stringify(Object.assign({}, createJestConfig(), appPackageJson.jest || {}))
 );
 
 jest.run(argv);

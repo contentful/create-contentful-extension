@@ -6,15 +6,15 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    'plugin:you-dont-need-lodash-underscore/all',
+    'plugin:you-dont-need-lodash-underscore/all'
   ],
   env: {
-    browser: true,
+    browser: true
   },
   parserOptions: {
     ecmaVersion: 6,
     project: 'tsconfig.json',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -37,14 +37,14 @@ module.exports = {
           'bluebird',
           {
             name: 'moment',
-            message: 'Use date-fns or Luxon instead!',
+            message: 'Use date-fns or Luxon instead!'
           },
           {
             name: 'lodash',
-            message: 'Use lodash-es instead!',
-          },
-        ],
-      },
-    ],
-  },
+            message: 'Use lodash-es instead!'
+          }
+        ]
+      }
+    ]
+  }
 };

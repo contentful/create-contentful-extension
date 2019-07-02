@@ -7,21 +7,18 @@ const chalk = require('chalk');
 const generateExtensionFile = require('./utils/generateExtensionFile');
 const updatePackageJsonFile = require('./utils/updatePackageJsonFile');
 const showHelp = require('./utils/showHelp');
-const { version } = require('../package.json');
 
 module.exports = (appPath, payload, originalDirectory) => {
   const { name, type, fields, language } = payload;
   const currentLanguage = language || 'javascript';
 
-  const ownPackageName = require(path.join(__dirname, '..', 'package.json'))
-    .name;
+  const ownPackageName = require(path.join(__dirname, '..', 'package.json')).name;
   const ownPath = path.join(appPath, 'node_modules', ownPackageName);
   let appPackage = require(path.join(appPath, 'package.json'));
 
   appPackage = updatePackageJsonFile(appPackage, {
-    version,
     language: currentLanguage,
-    type,
+    type
   });
 
   fs.writeFileSync(
@@ -37,7 +34,7 @@ module.exports = (appPath, payload, originalDirectory) => {
   const templates = [
     path.join(ownPath, 'template', 'common'),
     path.join(ownPath, 'template', currentLanguage),
-    path.join(ownPath, 'template', currentLanguage + '-' + type),
+    path.join(ownPath, 'template', currentLanguage + '-' + type)
   ];
 
   templates.forEach(path => {
@@ -46,14 +43,13 @@ module.exports = (appPath, payload, originalDirectory) => {
     }
   });
 
+  // rename eslintrc.js to .eslintrc.js
+  fs.moveSync(path.join(appPath, 'eslintrc.js'), path.join(appPath, '.eslintrc.js'), []);
+
   // Rename gitignore after the fact to prevent npm from renaming it to .npmignore
   // See: https://github.com/npm/npm/issues/1862
   try {
-    fs.moveSync(
-      path.join(appPath, 'gitignore'),
-      path.join(appPath, '.gitignore'),
-      []
-    );
+    fs.moveSync(path.join(appPath, 'gitignore'), path.join(appPath, '.gitignore'), []);
   } catch (err) {
     // Append if there's already a `.gitignore` file there
     if (err.code === 'EEXIST') {
@@ -85,9 +81,7 @@ module.exports = (appPath, payload, originalDirectory) => {
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
-    `  ${chalk.cyan(
-      `npm install && npm run login && npm run configure && npm run start`
-    )}`
+    `  ${chalk.cyan(`npm install && npm run login && npm run configure && npm run start`)}`
   );
   console.log();
   console.log('Happy hacking and enjoy Contentful UI Extensions!');

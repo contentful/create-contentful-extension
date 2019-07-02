@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import { render, fireEvent, cleanup, configure } from '@testing-library/react';
 import { DialogExtension, SidebarExtension } from './index';
 
 configure({
-  testIdAttribute: 'data-test-id',
+  testIdAttribute: 'data-test-id'
 });
 
 describe('DialogExtension', () => {
@@ -11,7 +13,7 @@ describe('DialogExtension', () => {
 
   it('renders button', () => {
     const sdk: any = {
-      close: jest.fn(),
+      close: jest.fn()
     };
     const { getByTestId } = render(<DialogExtension sdk={sdk} />);
 
@@ -26,11 +28,11 @@ describe('SidebarExtension', () => {
   it('render button', () => {
     const sdk: any = {
       window: {
-        startAutoResizer: jest.fn(),
+        startAutoResizer: jest.fn()
       },
       dialogs: {
-        openExtension: jest.fn(),
-      },
+        openExtension: jest.fn()
+      }
     };
     const { getByTestId } = render(<SidebarExtension sdk={sdk} />);
 
@@ -40,7 +42,7 @@ describe('SidebarExtension', () => {
 
     expect(sdk.dialogs.openExtension).toHaveBeenCalledWith({
       title: 'The same extension rendered in modal window',
-      width: 800,
+      width: 800
     });
   });
 });

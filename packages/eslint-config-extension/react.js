@@ -25,18 +25,18 @@ try {
 module.exports = {
   extends: ['prettier/react'],
   env: {
-    browser: true,
+    browser: true
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   plugins: ['react', 'react-hooks'],
   settings: {
     react: {
-      version: oldestSupportedReactVersion,
-    },
+      version: oldestSupportedReactVersion
+    }
   },
   rules: {
     'react/display-name': ['error', { ignoreTranspilerName: false }],
@@ -95,10 +95,7 @@ module.exports = {
     'react/void-dom-elements-no-children': 'error',
     'react/default-props-match-prop-types': 'error',
     'react/jsx-child-element-spacing': 'off',
-    'react/jsx-curly-brace-presence': [
-      'warn',
-      { props: 'never', children: 'ignore' },
-    ],
+    'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'ignore' }],
     'react/no-access-state-in-setstate': 'error',
     'react/no-redundant-should-component-update': 'error',
     'react/no-this-in-sfc': 'error',
@@ -114,6 +111,6 @@ module.exports = {
     'react/jsx-props-no-multi-spaces': 'off',
     'react/jsx-sort-default-props': 'off',
     'react-hooks/exhaustive-deps': 'warn',
-    'react-hooks/rules-of-hooks': 'error',
-  },
+    'react-hooks/rules-of-hooks': 'error'
+  }
 };

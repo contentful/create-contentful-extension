@@ -8,12 +8,12 @@
     "babel-eslint": "10.0.2",
     "commitizen": "3.1.1",
     "cz-customizable": "6.2.0",
-    "eslint": "5.16.0",
-    "eslint-config-prettier": "5.0.0",
+    "eslint": "6.0.1",
+    "eslint-config-prettier": "6.0.0",
     "eslint-plugin-node": "9.1.0",
-    "husky": "2.4.1",
+    "husky": "3.0.0",
     "lerna": "3.15.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "9.0.2",
     "prettier": "1.18.2",
     "tar": ">=4.4.10"
   },
@@ -21,9 +21,10 @@
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
-    "lint": "eslint './packages/**/*.js'",
-    "local:test": "rm -rf dist && node packages/create-contentful-extension/lib/index.js dist",
+    "lint": "eslint ./ --ext .js,.jsx,.ts,.tsx",
+    "local:test": "rm -rf dist && LOCAL_TEST=true node packages/create-contentful-extension/lib/index.js dist",
     "commit": "git-cz",
+    "prettier": "prettier **/*.{js,jsx,ts,tsx} scripts/**/*.js --write --ignore-path .gitignore",
     "commitmsg": "validate-commit-msg"
   },
   "config": {
@@ -35,7 +36,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write",
       "git add"

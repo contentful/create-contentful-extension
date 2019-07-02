@@ -5,7 +5,7 @@ import {
   init,
   locations,
   DialogExtensionSDK,
-  SidebarExtensionSDK,
+  SidebarExtensionSDK
 } from 'contentful-ui-extensions-sdk';
 import tokens from '@contentful/forma-36-tokens';
 import '@contentful/forma-36-react-components/dist/styles.css';
@@ -22,8 +22,7 @@ export class DialogExtension extends React.Component<{
           buttonType="muted"
           onClick={() => {
             this.props.sdk.close('data from modal dialog');
-          }}
-        >
+          }}>
           Close modal
         </Button>
       </div>
@@ -41,8 +40,9 @@ export class SidebarExtension extends React.Component<{
   onButtonClick = async () => {
     const result = await this.props.sdk.dialogs.openExtension({
       width: 800,
-      title: 'The same extension rendered in modal window',
+      title: 'The same extension rendered in modal window'
     });
+    // eslint-disable-next-line no-console
     console.log(result);
   };
 
@@ -52,8 +52,7 @@ export class SidebarExtension extends React.Component<{
         testId="open-dialog"
         buttonType="positive"
         isFullWidth={true}
-        onClick={this.onButtonClick}
-      >
+        onClick={this.onButtonClick}>
         Click on me to open dialog extension
       </Button>
     );
@@ -62,15 +61,9 @@ export class SidebarExtension extends React.Component<{
 
 init(sdk => {
   if (sdk.location.is(locations.LOCATION_DIALOG)) {
-    render(
-      <DialogExtension sdk={sdk as DialogExtensionSDK} />,
-      document.getElementById('root')
-    );
+    render(<DialogExtension sdk={sdk as DialogExtensionSDK} />, document.getElementById('root'));
   } else {
-    render(
-      <SidebarExtension sdk={sdk as SidebarExtensionSDK} />,
-      document.getElementById('root')
-    );
+    render(<SidebarExtension sdk={sdk as SidebarExtensionSDK} />, document.getElementById('root'));
   }
 });
 

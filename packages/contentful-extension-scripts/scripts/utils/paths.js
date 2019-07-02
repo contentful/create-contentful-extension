@@ -10,5 +10,5 @@ module.exports = {
   src: resolveApp('src'),
   build: resolveApp('build'),
   cache: resolveApp('.cache'),
-  coverage: resolveApp('.coverage'),
+  coverage: resolveApp('.coverage')
 };

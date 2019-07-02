@@ -41,7 +41,7 @@ const options = {
   hmr: false, // Enable or disable HMR while watching
   sourceMaps: shouldProduceSourceMaps, // Enable or disable sourcemaps, defaults to enabled (minified builds currently always create sourcemaps)
   detailedReport: true, // Prints a detailed report of the bundles, assets, filesizes and times, defaults to false, reports are only printed if watch is disabled
-  autoInstall: false, // Disable auto install
+  autoInstall: false // Disable auto install
 };
 
 const inlineAssets = async () => {
@@ -53,9 +53,9 @@ const inlineAssets = async () => {
 
   const result = await postHTML([
     posthtmlInlineAssets({
-      cwd: paths.build,
+      cwd: paths.build
     }),
-    htmlnano(),
+    htmlnano()
   ]).process(html);
   html = result.html;
 
@@ -64,19 +64,13 @@ const inlineAssets = async () => {
 
   console.log();
   console.log(
-    'Extension size: ' +
-      bytesToSize(extensionSize) +
-      ' from ' +
-      bytesToSize(LIMIT) +
-      ' allowed.'
+    'Extension size: ' + bytesToSize(extensionSize) + ' from ' + bytesToSize(LIMIT) + ' allowed.'
   );
   console.log();
 
   if (extensionSize > LIMIT) {
     console.error(
-      chalk.red(
-        'Your extensions exceeds max size. It cannot be hosted by Contentful.'
-      )
+      chalk.red('Your extensions exceeds max size. It cannot be hosted by Contentful.')
     );
     console.log();
     process.exit(0);
