@@ -16,7 +16,7 @@ import {
   EditorExtensionSDK,
 } from 'contentful-ui-extensions-sdk';
 import '@contentful/forma-36-react-components/dist/styles.css';
-import '@contentful/forma-36-fcss';
+import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
 
 /**
@@ -40,7 +40,7 @@ interface AppState {
   abstract: string;
 }
 
-class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
 
@@ -86,11 +86,16 @@ class App extends React.Component<AppProps, AppState> {
         </Paragraph>
         <SectionHeading>Title</SectionHeading>
         <TextInput
+          testId="field-title"
           onChange={this.onTitleChangeHandler}
           value={this.state.title}
         />
         <SectionHeading>Body</SectionHeading>
-        <Textarea onChange={this.onBodyChangeHandler} value={this.state.body} />
+        <Textarea
+          testId="field-body"
+          onChange={this.onBodyChangeHandler}
+          value={this.state.body}
+        />
         <SectionHeading>Has abstract?</SectionHeading>
         <FieldGroup row={false}>
           <RadioButtonField
@@ -114,6 +119,7 @@ class App extends React.Component<AppProps, AppState> {
           <React.Fragment>
             <SectionHeading>Abstract</SectionHeading>
             <Textarea
+              testId="field-abstract"
               onChange={this.onAbstractChangeHandler}
               value={this.state.abstract}
             />

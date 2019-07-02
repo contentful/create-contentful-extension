@@ -13,11 +13,11 @@ interface AppState {
   value?: string;
 }
 
-class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {
-      value: props.sdk.field.getValue(),
+      value: props.sdk.field.getValue() || '',
     };
   }
 
@@ -58,6 +58,7 @@ class App extends React.Component<AppProps, AppState> {
         width="large"
         type="text"
         id="my-field"
+        testId="my-field"
         value={this.state.value}
         onChange={this.onChange}
       />

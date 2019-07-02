@@ -12,7 +12,7 @@ import {
   Button,
 } from '@contentful/forma-36-react-components';
 import '@contentful/forma-36-react-components/dist/styles.css';
-import '@contentful/forma-36-fcss';
+import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
 
 function MainPage() {
@@ -36,7 +36,7 @@ function Page404() {
   return <Heading>404</Heading>;
 }
 
-class PageExtension extends React.Component {
+export class PageExtension extends React.Component {
   constructor(props) {
     super(props);
     this.history = createMemoryHistory({
@@ -92,13 +92,14 @@ PageExtension.propTypes = {
   sdk: PropTypes.object.isRequired,
 };
 
-function SidebarExtension(props) {
+export function SidebarExtension(props) {
   useEffect(() => {
     return props.sdk.window.startAutoResizer();
   }, [props.sdk]);
 
   return (
     <Button
+      testId="open-page-extension"
       onClick={() => {
         props.sdk.navigator.openPageExtension({ path: '/' });
       }}

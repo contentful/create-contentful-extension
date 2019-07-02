@@ -1,5 +1,6 @@
 {
-  "cmaToken": "",
+  "managementToken": "",
   "activeSpaceId": "",
-  "activeEnvironmentId": ""
+  "activeEnvironmentId": "",
+  "host": "api.contentful.com"
 }

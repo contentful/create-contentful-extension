@@ -11,11 +11,14 @@ import tokens from '@contentful/forma-36-tokens';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import './index.css';
 
-class DialogExtension extends React.Component<{ sdk: DialogExtensionSDK }> {
+export class DialogExtension extends React.Component<{
+  sdk: DialogExtensionSDK;
+}> {
   render() {
     return (
       <div style={{ margin: tokens.spacingM }}>
         <Button
+          testId="close-dialog"
           buttonType="muted"
           onClick={() => {
             this.props.sdk.close('data from modal dialog');
@@ -28,14 +31,15 @@ class DialogExtension extends React.Component<{ sdk: DialogExtensionSDK }> {
   }
 }
 
-class SidebarExtension extends React.Component<{ sdk: SidebarExtensionSDK }> {
+export class SidebarExtension extends React.Component<{
+  sdk: SidebarExtensionSDK;
+}> {
   componentDidMount() {
     this.props.sdk.window.startAutoResizer();
   }
 
   onButtonClick = async () => {
     const result = await this.props.sdk.dialogs.openExtension({
-      id: this.props.sdk.ids.extension,
       width: 800,
       title: 'The same extension rendered in modal window',
     });
@@ -45,6 +49,7 @@ class SidebarExtension extends React.Component<{ sdk: SidebarExtensionSDK }> {
   render() {
     return (
       <Button
+        testId="open-dialog"
         buttonType="positive"
         isFullWidth={true}
         onClick={this.onButtonClick}

@@ -12,7 +12,7 @@ import {
 } from '@contentful/forma-36-react-components';
 import { init, locations } from 'contentful-ui-extensions-sdk';
 import '@contentful/forma-36-react-components/dist/styles.css';
-import '@contentful/forma-36-fcss';
+import '@contentful/forma-36-fcss/dist/styles.css';
 import './index.css';
 
 /**
@@ -25,7 +25,7 @@ import './index.css';
  *  See https://github.com/contentful/create-contentful-extension/blob/master/docs/examples/entry-editor-content-model.json for details.
  */
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -71,11 +71,16 @@ class App extends React.Component {
         </Paragraph>
         <SectionHeading>Title</SectionHeading>
         <TextInput
+          testId="field-title"
           onChange={this.onTitleChangeHandler}
           value={this.state.title}
         />
         <SectionHeading>Body</SectionHeading>
-        <Textarea onChange={this.onBodyChangeHandler} value={this.state.body} />
+        <Textarea
+          testId="field-body"
+          onChange={this.onBodyChangeHandler}
+          value={this.state.body}
+        />
         <SectionHeading>Has abstract?</SectionHeading>
         <FieldGroup row={false}>
           <RadioButtonField
@@ -99,6 +104,7 @@ class App extends React.Component {
           <React.Fragment>
             <SectionHeading>Abstract</SectionHeading>
             <Textarea
+              testId="field-abstract"
               onChange={this.onAbstractChangeHandler}
               value={this.state.abstract}
             />
