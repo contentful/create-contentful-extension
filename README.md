@@ -128,6 +128,10 @@ The extension will automatically reload if you make changes to the code.
 Builds the extension for production to the `build` folder.<br>
 It correctly bundles React and all dependencies in production mode and optimizes the build for the best performance.
 
+### `npm run test`
+
+Run jest runner in watch mode. Passes through all flats directly to Jest
+
 ### `npm run login`
 
 Starts new session with our CLI. As the CLI tool uses our Content Management API, you need to have an CMA access token to use all the commands.
