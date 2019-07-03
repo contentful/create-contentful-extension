@@ -45,7 +45,7 @@ module.exports = {
     'react/forbid-foreign-prop-types': 'error',
     'react/forbid-prop-types': 'off',
     'react/jsx-boolean-value': 'off',
-    'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
+    'react/jsx-filename-extension': 'off',
     'react/jsx-fragments': 'off',
     'react/jsx-handler-names': 'off',
     'react/jsx-key': 'error',
@@ -94,7 +94,7 @@ module.exports = {
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error',
     'react/default-props-match-prop-types': 'error',
-    'react/jsx-child-element-spacing': 'warn',
+    'react/jsx-child-element-spacing': 'off',
     'react/jsx-curly-brace-presence': [
       'warn',
       { props: 'never', children: 'ignore' },
