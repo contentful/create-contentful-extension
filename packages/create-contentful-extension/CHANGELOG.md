@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/create-contentful-extension@0.6.0...@contentful/create-contentful-extension@0.7.0) (2019-07-03)
+
+
+### Features
+
+* setup Eslint & Prettier ([78927e0](https://github.com/contentful/create-contentful-extension/commit/78927e0))
+
+
+
+
+
 # [0.6.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/create-contentful-extension@0.5.0...@contentful/create-contentful-extension@0.6.0) (2019-06-24)
 
 
