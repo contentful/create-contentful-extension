@@ -1,6 +1,6 @@
 {
   "name": "@contentful/eslint-config-extension",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ESLint config, following our styleguide for Contentful UI Extensions",
   "main": "index.js",
   "scripts": {
@@ -24,19 +24,19 @@
   "homepage": "https://github.com/contentful/create-contentful-extension#readme",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "10.0.2",
-    "object.assign": "4.1.0",
-    "object.entries": "1.1.0",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
-    "eslint-plugin-you-dont-need-lodash-underscore": "6.5.0",
+    "babel-eslint": "10.0.2",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-jest": "22.7.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
-    "eslint-plugin-jest": "22.7.1",
     "eslint-plugin-react-hooks": "1.6.1",
+    "eslint-plugin-you-dont-need-lodash-underscore": "6.5.0",
+    "object.assign": "4.1.0",
+    "object.entries": "1.1.0",
     "read-pkg-up": "^6.0.0",
     "semver": "^6.1.1"
   },
