@@ -28,7 +28,6 @@ module.exports = {
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/prefer-includes': 'error',
-    '@typescript-eslint/no-floating-promises': 'error',
     'no-restricted-imports': [
       'error',
       {
