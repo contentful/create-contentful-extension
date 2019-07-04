@@ -1,6 +1,7 @@
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'test';
 process.env.NODE_ENV = 'test';
+process.env.TZ = 'UTC';
 const createJestConfig = require('./utils/createJestConfig');
 const paths = require('./utils/paths');
 const fs = require('fs');
