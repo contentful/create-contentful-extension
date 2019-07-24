@@ -162,15 +162,22 @@ Use `npm run configure` command. It asks what space and environment you'd like t
 
 **Caution**: Do not commit `.contentfulrc.json` to your repository. It contains sensitive information and intended to be used only on your local machine.
 
-### I want to serve extension in development mode from custom port number (not default 1234). Is it possible?
+### I want to serve the extension in development mode from a custom port number (not default 1234). Is it possible?
 
 Yes, it's possible. Edit `start` scripts in package.json file according to the following example:
 
 ```json
 "start": "contentful-extension-scripts start --port 8000",
 ```
+### I want to serve the extension without creating/updating the extension via the CLI
 
-### I use development mode but my extension is not showing up. What's wrong?
+If you simply want to serve the extension without having the CLI create or update an extension in your space, you can add `--serve-only` to the `start` command.
+
+```json
+"start": "contentful-extension-scripts start --serve-only",
+```
+
+### I'm using development mode but my extension is not showing up. What's wrong?
 
 In development mode, extension is served from `http://localhost:1234`, but `app.contentful.com` is loaded via `https` protocol which leads the browser to prevent [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/fixing-mixed-content). While doing development you need to click **Load unsafe scripts** (Chrome) to enable serving extension from `http://localhost`.
 
