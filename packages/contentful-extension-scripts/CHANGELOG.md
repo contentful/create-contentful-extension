@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.13.0...@contentful/contentful-extension-scripts@0.14.0) (2019-07-26)
+
+
+### Features
+
+* **contentful-extension-scripts:** serveOnly ([#44](https://github.com/contentful/create-contentful-extension/issues/44)) ([8128f0f](https://github.com/contentful/create-contentful-extension/commit/8128f0f))
+
+
+
+
+
 # [0.13.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.12.0...@contentful/contentful-extension-scripts@0.13.0) (2019-07-03)
 
 
