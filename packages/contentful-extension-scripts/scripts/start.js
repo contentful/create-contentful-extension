@@ -34,7 +34,10 @@ const options = {
 const bundler = new Bundler(entry, options);
 
 const run = async () => {
-  await updateExtension(port, https);
+  if (!argv.serveOnly) {
+    await updateExtension(port, https);
+  }
+
   await bundler.serve(port, https);
 };
 
