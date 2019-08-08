@@ -176,6 +176,7 @@ If you simply want to serve the extension without having the CLI create or updat
 ```json
 "start": "contentful-extension-scripts start --serve-only",
 ```
+Available since v0.14.0
 
 ### I'm using development mode but my extension is not showing up. What's wrong?
 
