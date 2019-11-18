@@ -3,7 +3,7 @@ process.env.BABEL_ENV = 'test';
 process.env.NODE_ENV = 'test';
 const createJestConfig = require('./utils/createJestConfig');
 const paths = require('./utils/paths');
-const fs = require('fs');
+const fs = require('fs-extra');
 const jest = require('jest');
 
 const argv = process.argv.slice(2);
