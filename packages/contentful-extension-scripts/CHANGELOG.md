@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.14.0...@contentful/contentful-extension-scripts@0.14.1) (2019-11-19)
+
+
+### Bug Fixes
+
+* ability to override jest configuration ([#51](https://github.com/contentful/create-contentful-extension/issues/51)) ([d4368e9](https://github.com/contentful/create-contentful-extension/commit/d4368e9))
+
+
+
+
+
 # [0.14.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.13.0...@contentful/contentful-extension-scripts@0.14.0) (2019-07-26)
 
 
