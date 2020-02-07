@@ -1,6 +1,6 @@
 {
   "name": "@contentful/eslint-config-extension",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "ESLint config, following our styleguide for Contentful UI Extensions",
   "main": "index.js",
   "scripts": {
