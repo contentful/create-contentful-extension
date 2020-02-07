@@ -1,9 +1,6 @@
 {
   "version": "independent",
   "command": {
-    "bootstrap": {
-      "npmClientArgs": ["--no-package-lock"]
-    },
     "version": {
       "conventionalCommits": true,
       "exact": true,
