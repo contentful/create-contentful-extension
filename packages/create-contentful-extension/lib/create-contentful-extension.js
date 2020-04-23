@@ -112,6 +112,7 @@ const createExtension = async (name, verbose) => {
         { name: 'Symbol' },
         { name: 'Symbols' },
         { name: 'Text' },
+        { name: 'RichText' },
         { name: 'Integer' },
         { name: 'Number' },
         { name: 'Date' },
