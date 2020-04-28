@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/create-contentful-extension@0.8.1...@contentful/create-contentful-extension@0.9.0) (2020-04-28)
+
+
+### Features
+
+* allow cli to create rich text field extensions ([#63](https://github.com/contentful/create-contentful-extension/issues/63)) ([d6c2719](https://github.com/contentful/create-contentful-extension/commit/d6c2719b55d7f28d262f3a4b8d761470d6e8b9b9))
+
+
+
+
+
 ## [0.8.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/create-contentful-extension@0.7.2...@contentful/create-contentful-extension@0.8.1) (2020-02-07)
 
 **Note:** Version bump only for package @contentful/create-contentful-extension

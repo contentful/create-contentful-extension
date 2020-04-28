@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.15.1...@contentful/contentful-extension-scripts@0.16.0) (2020-04-28)
+
+
+### Features
+
+* update contentful dependencies in generated packagejson ([#64](https://github.com/contentful/create-contentful-extension/issues/64)) ([ccd03a0](https://github.com/contentful/create-contentful-extension/commit/ccd03a0bebe32161718a1971e1bcaa65f171bfe5))
+
+
+
+
+
 ## [0.15.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.14.3...@contentful/contentful-extension-scripts@0.15.1) (2020-02-07)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
