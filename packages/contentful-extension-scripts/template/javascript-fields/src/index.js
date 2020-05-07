@@ -30,9 +30,7 @@ export const App = ({sdk}) => {
   useEffect(() => {
     // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
     const detatchValueChangeHandler = sdk.field.onValueChanged(onExternalChange);
-    return () => {
-      detatchValueChangeHandler();
-    }
+    return detatchValueChangeHandler;
   });
 
   return (
