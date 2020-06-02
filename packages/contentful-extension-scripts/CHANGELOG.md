@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.16.0...@contentful/contentful-extension-scripts@0.17.0) (2020-06-02)
+
+
+### Features
+
+* **contentful-extension-scripts:** use hooks for javascript-fields ([#62](https://github.com/contentful/create-contentful-extension/issues/62)) ([6873ac1](https://github.com/contentful/create-contentful-extension/commit/6873ac1c01ec7ee818f4588c1c2d48267f4cbe2c))
+
+
+
+
+
 # [0.16.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.15.1...@contentful/contentful-extension-scripts@0.16.0) (2020-04-28)
 
 
