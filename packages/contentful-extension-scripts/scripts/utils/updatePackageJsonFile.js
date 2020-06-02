@@ -12,11 +12,10 @@ module.exports = (pkg, { language, type }) => {
     help: 'contentful-extension-scripts help'
   };
   pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
-    '@babel/core': '7.3.4',
-    '@babel/plugin-proposal-class-properties': '7.3.4',
-    '@babel/plugin-transform-runtime': '7.3.4',
-    '@babel/preset-env': '7.3.4',
-    '@babel/preset-react': '7.0.0',
+    '@babel/core': '7.10.0',
+    '@babel/plugin-transform-runtime': '7.10.0',
+    '@babel/preset-env': '7.10.0',
+    '@babel/preset-react': '7.10.0',
     '@testing-library/react': '8.0.4',
     cssnano: '4.1.10',
     'contentful-cli': '0.33.2',
