@@ -13,7 +13,7 @@ export const App = ({sdk}) => {
     setValue(value);
   }
 
-  onChange = e => {
+  const onChange = e => {
     const value = e.currentTarget.value;
     setValue(value);
     if (value) {
