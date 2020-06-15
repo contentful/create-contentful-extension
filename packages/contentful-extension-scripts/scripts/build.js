@@ -28,8 +28,8 @@ const entry = paths.src + '/index.html';
 
 // Bundler options
 const options = {
-  outDir: paths.build,
-  publicUrl: publicUrl, // The out directory to put the build files in, defaults to dist
+  outDir: paths.build, // The out directory to put the build files in, defaults to dist
+  publicUrl: publicUrl,
   outFile: 'index.html', // The name of the outputFile
   target: 'browser',
   watch: false, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
