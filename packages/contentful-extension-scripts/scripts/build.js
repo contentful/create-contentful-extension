@@ -34,7 +34,7 @@ const options = {
   target: 'browser',
   watch: false, // Whether to watch the files and rebuild them on change, defaults to process.env.NODE_ENV !== 'production'
   cache: false, // Enabled or disables caching, defaults to true
-  contentHash: false, // Disable content hash from being included on the filename
+  contentHash: true, // Include a content hash in the outputted filenames
   minify: true, // Minify files, enabled if process.env.NODE_ENV === 'production'
   scopeHoist: false, // Turn on experimental scope hoisting/tree shaking flag, for smaller production bundles
   logLevel: 3, // 5 = save everything to a file, 4 = like 3, but with timestamps and additionally log http requests to dev server, 3 = log info, warnings & errors, 2 = log warnings & errors, 1 = log errors
