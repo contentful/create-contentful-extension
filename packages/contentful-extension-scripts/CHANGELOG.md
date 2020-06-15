@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.17.1...@contentful/contentful-extension-scripts@0.18.0) (2020-06-15)
+
+
+### Bug Fixes
+
+* include contentHash in names of built artifacts ([#72](https://github.com/contentful/create-contentful-extension/issues/72)) ([77a7629](https://github.com/contentful/create-contentful-extension/commit/77a762950b5d0784bb4450e84cec5bac8ab2c6da))
+
+
+
+
+
 ## [0.17.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.17.0...@contentful/contentful-extension-scripts@0.17.1) (2020-06-02)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
