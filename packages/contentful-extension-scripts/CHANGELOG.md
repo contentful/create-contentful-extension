@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.18.0...@contentful/contentful-extension-scripts@0.19.0) (2020-06-15)
+
+
+### Features
+
+* Enable build cacheing ([#73](https://github.com/contentful/create-contentful-extension/issues/73)) ([c095e03](https://github.com/contentful/create-contentful-extension/commit/c095e038c66c5b71d1de655738735f8425026927))
+
+
+
+
+
 # [0.18.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.17.1...@contentful/contentful-extension-scripts@0.18.0) (2020-06-15)
 
 
