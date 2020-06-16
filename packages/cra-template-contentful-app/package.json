@@ -1,0 +1,12 @@
+{
+  "name": "cra-template-contentful-app",
+  "version": "1.0.0",
+  "description": "A template for building Contentful Apps",
+  "author": "Contentful GmbH",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "main": "template.json",
+  "files": ["template", "template.json"]
+}
