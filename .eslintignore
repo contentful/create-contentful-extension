@@ -1,4 +1,4 @@
 **/node_modules/**
 packages/contentful-extension-scripts/template/**
-packages/cra-template-contentful-app/template/src**
+packages/create-contentful-app/template/src**
 dist/
