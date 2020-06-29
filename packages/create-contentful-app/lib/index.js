@@ -4,6 +4,12 @@ const chalk = require('chalk');
 const spawn = require('cross-spawn');
 const appFolder = process.argv[2];
 
+if (!appFolder) {
+  throw new Error(
+    chalk.red(`Please provide a name for your app. E.g: "npx create-contentful-app my-app"`)
+  );
+}
+
 try {
   spawn('npx', ['create-react-app', appFolder, '--template', `file:${__dirname}/../`], {
     stdio: 'inherit'
