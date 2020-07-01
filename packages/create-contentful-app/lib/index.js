@@ -11,7 +11,9 @@ if (!appFolder) {
 }
 
 try {
-  spawn('npx', ['create-react-app', appFolder, '--template', `file:${__dirname}/../`], {
+  const command = 'npx';
+  const args = ['create-react-app', appFolder, '--template', `file:${__dirname}/../`];
+  spawn(command, args, {
     stdio: 'inherit'
   });
 
