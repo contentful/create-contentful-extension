@@ -15,11 +15,14 @@
       "@types/react-dom": "^16.9.0",
       "contentful-cli": "1.4.11",
       "contentful-ui-extensions-sdk": "3.15.0",
+      "inquirer": "^7.2.0",
+      "node-fetch": "^2.6.0",
       "typescript": "^3.8.0"
     },
     "scripts": {
       "deploy": "echo implement this!!",
-      "configure": "contentful login && contentful space use && contentful space environment use",
+      "configure": "contentful login && npm run create-app-definition",
+      "create-app-definition": "node ./bin/prompt-app-definition",
       "login": "contentful login",
       "logout": "contentful logout",
       "help": "contentful-extension-scripts help"

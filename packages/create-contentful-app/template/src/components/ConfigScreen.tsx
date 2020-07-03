@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppExtensionSDK } from 'contentful-ui-extensions-sdk';
-import { TextField, Heading, Form, Workbench } from '@contentful/forma-36-react-components';
+import { Heading, Form, Workbench, Paragraph } from '@contentful/forma-36-react-components';
 import { css } from 'emotion';
 
 export interface AppInstallationParameters {
@@ -43,15 +43,7 @@ export default class Config extends Component<ConfigProps, ConfigState> {
       <Workbench className={css({ margin: '80px' })}>
         <Form>
           <Heading>App Config</Heading>
-          <TextField
-            name="config"
-            id="config"
-            labelText="Set a default value to fill in your field editor"
-            value={this.state.parameters.defaultValue}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              this.setState({ parameters: { defaultValue: e.target.value } })
-            }
-          />
+          <Paragraph>Welcome to your contentful app. This is your config page.</Paragraph>
         </Form>
       </Workbench>
     );

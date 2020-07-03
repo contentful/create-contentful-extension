@@ -1,4 +1,5 @@
 **/node_modules/**
 packages/contentful-extension-scripts/template/**
 packages/create-contentful-app/template/src**
+packages/create-contentful-app/template/bin**
 dist/
