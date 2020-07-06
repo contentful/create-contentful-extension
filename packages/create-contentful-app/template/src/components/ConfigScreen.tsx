@@ -3,9 +3,7 @@ import { AppExtensionSDK } from 'contentful-ui-extensions-sdk';
 import { Heading, Form, Workbench, Paragraph } from '@contentful/forma-36-react-components';
 import { css } from 'emotion';
 
-export interface AppInstallationParameters {
-  defaultValue: string;
-}
+export interface AppInstallationParameters {}
 
 interface ConfigProps {
   sdk: AppExtensionSDK;
@@ -18,7 +16,7 @@ interface ConfigState {
 export default class Config extends Component<ConfigProps, ConfigState> {
   constructor(props: ConfigProps) {
     super(props);
-    this.state = { parameters: { defaultValue: '' } };
+    this.state = { parameters: {} };
 
     // `onConfigure` allows to configure a callback to be
     // invoked when a user attempts to install the app or update
