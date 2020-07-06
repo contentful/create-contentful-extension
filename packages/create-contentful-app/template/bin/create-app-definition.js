@@ -7,13 +7,14 @@ const Tokens = require('../.contentfulrc.json');
 const BASE_URL = `https://${Tokens.host}/organizations/`;
 
 async function fetchOrganizations() {
-  const orgs = await fetch(BASE_URL, {
+  const response = await fetch(BASE_URL, {
     method: 'get',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${Tokens.managementToken}`
     }
-  }).then(res => res.json());
+  });
+  const orgs = await response.json();
 
   return orgs.items.map(org => ({
     name: `${org.name} (${org.sys.id})`,
@@ -53,14 +54,15 @@ module.exports = async function createAppDefition(appDefinitionSettings) {
     })
   };
 
-  const createdAppDefition = await fetch(`${BASE_URL}/${organization}/app_definitions`, {
+  const response = await fetch(`${BASE_URL}/${organization}/app_definitions`, {
     method: 'post',
     body: JSON.stringify(body),
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${Tokens.managementToken}`
     }
-  }).then(res => res.json());
+  });
+  const createdAppDefition = await response.json();
 
   console.log();
   console.log(`App ${appDefinitionSettings.name} has been successfully created in ${name}`);

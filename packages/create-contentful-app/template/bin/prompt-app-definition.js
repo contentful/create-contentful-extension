@@ -14,34 +14,34 @@ let appDefinitionSettings;
     },
     {
       name: 'locations',
-      message: 'Select locations for this app:',
+      message: 'Select where your app can be rendered:',
       type: 'checkbox',
       choices: [
         { name: 'Entry field (entry-field) ', value: 'entry-field' },
         { name: 'Entry editor (entry-editor)', value: 'entry-editor' },
         { name: 'Entry sidebar (entry-sidebar) ', value: 'entry-sidebar' },
-        { name: 'Page (page) ', value: 'page' },
-        { name: 'Dialog (dialog) ', value: 'dialog' }
+        { name: 'Page (page) ', value: 'page' }
       ]
     },
     {
       name: 'fields',
-      message: 'Select field types:',
+      message: 'Select the field types the app can be rendered in.:',
       type: 'checkbox',
       choices: [
-        { name: 'Symbol' },
-        { name: 'Symbols' },
-        { name: 'Text' },
-        { name: 'RichText' },
-        { name: 'Integer' },
-        { name: 'Number' },
-        { name: 'Date' },
-        { name: 'Boolean' },
-        { name: 'Object' },
-        { name: 'Entry' },
-        { name: 'Entries' },
-        { name: 'Asset' },
-        { name: 'Assets' }
+        { name: 'Short text', value: 'Symbol' },
+        { name: 'Short text, list', value: 'Symbols' },
+        { name: 'Long text', value: 'Text' },
+        { name: 'Rich text', value: 'RichText' },
+        { name: 'Number, integer', value: 'Integer' },
+        { name: 'Number, decimal', value: 'Number' },
+        { name: 'Date and time', value: 'Date' },
+        { name: 'Location', value: 'Location' },
+        { name: 'Boolean', value: 'Boolean' },
+        { name: 'JSON object', value: 'Object' },
+        { name: 'Entry reference', value: 'Entry' },
+        { name: 'Entry reference, list', value: 'Entries' },
+        { name: 'Media reference', value: 'Asset' },
+        { name: 'Media reference, list', value: 'Assets' }
       ],
       when(answers) {
         return answers.locations.includes('entry-field');
@@ -55,8 +55,8 @@ let appDefinitionSettings;
     }
   ]);
 
-  // Add app-config automatically
-  appDefinitionSettings.locations = ['app-config', ...appDefinitionSettings.locations];
+  // Add app-config & dialog automatically
+  appDefinitionSettings.locations = ['app-config', 'dialog', ...appDefinitionSettings.locations];
 
   await createAppDefinition(appDefinitionSettings);
 })();

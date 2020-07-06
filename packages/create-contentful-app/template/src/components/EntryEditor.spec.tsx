@@ -3,9 +3,9 @@ import EntryEditor from './EntryEditor';
 import { render } from '@testing-library/react';
 
 describe('Entry component', () => {
-  it('Matches snapshot', () => {
-    const component = render(<EntryEditor />);
+  it('Component text exists', () => {
+    const { getByText } = render(<EntryEditor />);
 
-    expect(component.container).toMatchSnapshot();
+    expect(getByText('Hello Entry Editor Component')).toBeInTheDocument();
   });
 });

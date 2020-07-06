@@ -3,9 +3,9 @@ import Field from './Field';
 import { render } from '@testing-library/react';
 
 describe('Field component', () => {
-  it('Matches snapshot', () => {
-    const component = render(<Field />);
+  it('Component text exists', () => {
+    const { getByText } = render(<Field />);
 
-    expect(component.container).toMatchSnapshot();
+    expect(getByText('Hello Entry Field Component')).toBeInTheDocument();
   });
 });

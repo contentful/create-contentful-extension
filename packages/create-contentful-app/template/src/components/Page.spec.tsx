@@ -3,9 +3,9 @@ import Page from './Page';
 import { render } from '@testing-library/react';
 
 describe('Page component', () => {
-  it('Matches snapshot', () => {
-    const component = render(<Page />);
+  it('Component text exists', () => {
+    const { getByText } = render(<Page />);
 
-    expect(component.container).toMatchSnapshot();
+    expect(getByText('Hello Page Component')).toBeInTheDocument();
   });
 });

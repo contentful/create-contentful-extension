@@ -3,9 +3,9 @@ import Dialog from './Dialog';
 import { render } from '@testing-library/react';
 
 describe('Dialog component', () => {
-  it('Matches snapshot', () => {
-    const component = render(<Dialog />);
+  it('Component text exists', () => {
+    const { getByText } = render(<Dialog />);
 
-    expect(component.container).toMatchSnapshot();
+    expect(getByText('Hello Dialog Component')).toBeInTheDocument();
   });
 });

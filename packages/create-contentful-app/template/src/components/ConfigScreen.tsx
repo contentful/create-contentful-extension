@@ -36,6 +36,17 @@ export default class Config extends Component<ConfigProps, ConfigState> {
     });
   }
 
+  onConfigure = async () => {
+    // This method will be called when a user clicks on "Install"
+    // or "Save" in the configuration screen.
+    // for more details see https://www.contentful.com/developers/docs/extensibility/ui-extensions/sdk-reference/#register-an-app-configuration-hook
+
+    return {
+      // Parameters to be persisted as the app configuration.
+      parameters: this.state.parameters
+    };
+  };
+
   render() {
     return (
       <Workbench className={css({ margin: '80px' })}>
@@ -45,16 +56,5 @@ export default class Config extends Component<ConfigProps, ConfigState> {
         </Form>
       </Workbench>
     );
-  }
-
-  async onConfigure() {
-    // This method will be called when a user clicks on "Install"
-    // or "Save" in the configuration screen.
-    // for more details see https://www.contentful.com/developers/docs/extensibility/ui-extensions/sdk-reference/#register-an-app-configuration-hook
-
-    return {
-      // Parameters to be persisted as the app configuration.
-      parameters: this.state.parameters
-    };
   }
 }

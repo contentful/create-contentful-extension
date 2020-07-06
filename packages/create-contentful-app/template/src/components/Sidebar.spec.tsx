@@ -3,9 +3,9 @@ import Sidebar from './Entry';
 import { render } from '@testing-library/react';
 
 describe('Sidebar component', () => {
-  it('Matches snapshot', () => {
-    const component = render(<Sidebar />);
+  it('Component text exists', () => {
+    const { getByText } = render(<Sidebar />);
 
-    expect(component.container).toMatchSnapshot();
+    expect(getByText('Hello Sidebar Component')).toBeInTheDocument();
   });
 });
