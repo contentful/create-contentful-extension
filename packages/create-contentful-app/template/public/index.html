@@ -17,7 +17,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      if (!window.parent) {
+      if (window.parent === window.top) {
         document.querySelector('#root').innerHTML =`
           If you're seeing this, you mostly likely opened this in a browser.
           Please visit <a href="https://app.contentful.com">app.contentful.com</a>
