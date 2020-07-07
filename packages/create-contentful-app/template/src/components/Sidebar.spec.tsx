@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './Entry';
+import Sidebar from './Sidebar';
 import { render } from '@testing-library/react';
 
 describe('Sidebar component', () => {
