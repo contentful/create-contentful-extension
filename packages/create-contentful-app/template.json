@@ -14,6 +14,7 @@
       "@types/react": "^16.9.0",
       "@types/react-dom": "^16.9.0",
       "contentful-cli": "1.4.11",
+      "contentful-management": "^5.27.3",
       "contentful-ui-extensions-sdk": "3.15.0",
       "inquirer": "^7.2.0",
       "node-fetch": "^2.6.0",
