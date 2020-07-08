@@ -1,16 +1,13 @@
-#!/usr/bin/env node
+/* eslint-disable no-console, no-process-exit */
 
-const { createClient } = require('contentful-management');
 const inquirer = require('inquirer');
-const { managementToken } = require('../.contentfulrc.json');
+const path = require('path');
+const { createClient } = require('contentful-management');
+const login = require('./login');
 
-const client = createClient({
-  accessToken: managementToken
-});
-
-async function fetchOrganizations() {
+async function fetchOrganizations(client) {
   try {
-    orgs = await client.getOrganizations();
+    const orgs = await client.getOrganizations();
 
     return orgs.items.map(org => ({
       name: `${org.name} (${org.sys.id})`,
@@ -30,7 +27,14 @@ async function fetchOrganizations() {
 module.exports = async function createAppDefition(appDefinitionSettings = {}) {
   let selectedOrg;
 
-  const organizations = await fetchOrganizations();
+  // login and create credentials file
+  const accessToken = await login();
+
+  const client = createClient({
+    accessToken
+  });
+
+  const organizations = await fetchOrganizations(client);
 
   const { organizationId } = await inquirer.prompt([
     {
@@ -42,8 +46,9 @@ module.exports = async function createAppDefition(appDefinitionSettings = {}) {
   ]);
   selectedOrg = organizations.find(org => org.value === organizationId);
 
+  const appName = appDefinitionSettings.name || path.basename(process.cwd());
   const body = {
-    name: appDefinitionSettings.name,
+    name: appName,
     src: 'http://localhost:3000',
     locations: appDefinitionSettings.locations.map(location => {
       if (location === 'entry-field') {
@@ -66,14 +71,12 @@ module.exports = async function createAppDefition(appDefinitionSettings = {}) {
     const createdAppDefition = await organization.createAppDefinition(body);
 
     console.log();
-    console.log(
-      `App ${appDefinitionSettings.name} has been successfully created in ${selectedOrg.name}`
-    );
+    console.log(`App ${appName} has been successfully created in ${selectedOrg.name}`);
     console.log();
     console.log();
     console.log(`Next steps: `);
     console.log(
-      `   1. To develop, run \`npm start\` and open https://app.contentful.com/deeplink?link=apps&id=${createdAppDefition.sys.id}`
+      `   1. To develop, run \`npm start\` inside your app folder and open https://app.contentful.com/deeplink?link=apps&id=${createdAppDefition.sys.id}`
     );
     console.log(
       `   2. To learn how to build your first Contentful app, visit https://ctfl.io/app-tutorial`
@@ -82,7 +85,7 @@ module.exports = async function createAppDefition(appDefinitionSettings = {}) {
   } catch (err) {
     console.log();
     console.log(
-      'Something went wrong with creating app definition. Run `npm run configure` to try again.'
+      'Something went wrong with creating app definition. Run `create-contentful-app create-definition` to try again.'
     );
     console.log();
     console.log(err.message);

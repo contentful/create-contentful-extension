@@ -17,12 +17,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      if (window.parent === window.top) {
-        document.querySelector('#root').innerHTML =`
-          If you're seeing this, you mostly likely opened this in a browser.
-          Please visit <a href="https://app.contentful.com">app.contentful.com</a>
-          and install the app in order to use it.
-        `
+      if (window.self === window.top) {
+        window.location.replace('https://app.contentful.com/deeplink?link=apps');
       }
     </script>
   </body>

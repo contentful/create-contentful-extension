@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-
 const inquirer = require('inquirer');
 const path = require('path');
-const createAppDefinition = require('./create-app-definition');
 
 let appDefinitionSettings;
 
-(async () => {
+module.exports = async function promptAppDefinition() {
   appDefinitionSettings = await inquirer.prompt([
     {
       name: 'name',
@@ -58,5 +55,5 @@ let appDefinitionSettings;
   // Add app-config & dialog automatically
   appDefinitionSettings.locations = ['app-config', 'dialog', ...appDefinitionSettings.locations];
 
-  await createAppDefinition(appDefinitionSettings);
-})();
+  return appDefinitionSettings;
+};
