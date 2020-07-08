@@ -40,7 +40,14 @@ function initProject() {
     const initCommand = 'npx';
     const execPath = path.resolve(__dirname, '../');
 
-    const args = ['create-react-app', appFolder, '--template', `file:${execPath}`, '--silent'];
+    const args = [
+      'create-react-app',
+      appFolder,
+      '--template',
+      `file:${execPath}`,
+      '--silent',
+      '--use-npm'
+    ];
 
     // start creating app
     const appCreateProcess = spawn(initCommand, args, {
