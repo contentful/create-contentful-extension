@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const fetch = require('node-fetch');
 const { createClient } = require('contentful-management');
 const inquirer = require('inquirer');
 const { managementToken } = require('../.contentfulrc.json');
