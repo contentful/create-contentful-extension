@@ -15,9 +15,7 @@ async function fetchOrganizations(client) {
     }));
   } catch (err) {
     console.log();
-    console.log(
-      'We couldnt find your organizations. Please make sure you provided an access token'
-    );
+    console.log('Could not fetch your organizations. Make sure you provided a valid access token.');
     console.log();
     console.log(err.message);
     process.exit(1);
@@ -27,7 +25,6 @@ async function fetchOrganizations(client) {
 module.exports = async function createAppDefition(appDefinitionSettings = {}) {
   let selectedOrg;
 
-  // login and create credentials file
   const accessToken = await login();
 
   const client = createClient({

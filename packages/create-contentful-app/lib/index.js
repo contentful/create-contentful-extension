@@ -84,19 +84,20 @@ function initProject() {
       console.log('Available commands:');
       console.log();
       console.log(`${mainCommand} init app-name`);
-      console.log(`   Bootstraps your app inside a new folder "app-name"`);
+      console.log(`   Bootstraps your app inside of a new folder "app-name"`);
       console.log();
       console.log(`${mainCommand} create-definition`);
       console.log(`   Creates an app definition for your app.`);
-      console.log(`   This will prompt you to login into contentful,`);
-      console.log(`   paste your management token after obtaining it,`);
-      console.log(`   select an organization before creating a new app definition.`);
+      console.log(`   This will prompt you to login into Contentful,`);
+      console.log(
+        `   Paste your access token after obtaining it and select an organization for your app definition`
+      );
       console.log();
       break;
 
     default:
       console.log();
-      console.log(`Unknown command. Please run "${mainCommand} help" to see available options.`);
+      console.log(`Unknown command. Run "${mainCommand} help" to see available options.`);
       process.exit(1);
   }
 })();
