@@ -1,4 +1,12 @@
 const paths = require('./paths');
+const path = require('path');
+const fs = require('fs');
+
+let jestConfig = {};
+
+if (fs.existsSync(path.resolve('jest.config.js'))) {
+  jestConfig = require(path.resolve('jest.config.js'));
+}
 
 module.exports = function createJestConfig() {
   const config = {
@@ -24,7 +32,8 @@ module.exports = function createJestConfig() {
     watchPlugins: [
       require.resolve('jest-watch-typeahead/filename'),
       require.resolve('jest-watch-typeahead/testname')
-    ]
+    ],
+    ...jestConfig
   };
 
   return config;

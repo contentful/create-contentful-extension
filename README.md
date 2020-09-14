@@ -130,7 +130,7 @@ It correctly bundles React and all dependencies in production mode and optimizes
 
 ### `npm run test`
 
-Run jest runner in watch mode. Passes through all flats directly to Jest
+Run jest runner in watch mode. Passes through all flats directly to Jest. If you happen to have a local jest configuration file (i.e: `jest.config.js`), testing only supports exporting a config object (as opposed to functions).
 
 ### `npm run login`
 
