@@ -16,8 +16,8 @@ npm run start
 
 ### Requirements
 
-- Node 10.13 or higher
-- NPM 6.4.1 and higher
+- Node 12.13 or higher
+- NPM 6.12.0 and higher
 
 ## What’s Included?
 
