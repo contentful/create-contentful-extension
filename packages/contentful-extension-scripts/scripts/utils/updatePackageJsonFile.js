@@ -9,56 +9,56 @@ module.exports = (pkg, { language, type }) => {
     configure: 'contentful space use && contentful space environment use',
     login: 'contentful login',
     logout: 'contentful logout',
-    help: 'contentful-extension-scripts help'
+    help: 'contentful-extension-scripts help',
   };
   pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
-    '@babel/core': '7.10.0',
-    '@babel/plugin-transform-runtime': '7.10.0',
-    '@babel/preset-env': '7.10.0',
-    '@babel/preset-react': '7.10.0',
-    '@testing-library/react': '8.0.4',
+    '@babel/core': '7.12.3',
+    '@babel/plugin-transform-runtime': '7.12.1',
+    '@babel/preset-env': '7.12.1',
+    '@babel/preset-react': '7.12.1',
+    '@testing-library/react': '11.1.1',
     cssnano: '4.1.10',
-    'contentful-cli': '0.33.2',
-    eslint: '^6.0.1'
+    'contentful-cli': '1.4.48',
+    eslint: '7.12.1',
   });
   pkg.dependencies = {
-    '@contentful/forma-36-fcss': '^0.0.35',
-    '@contentful/forma-36-react-components': '^3.37.0',
-    '@contentful/forma-36-tokens': '^0.5.2',
-    'contentful-ui-extensions-sdk': '3.13.0',
-    'prop-types': '^15.7.2',
-    react: '^16.8.6',
-    'react-dom': '^16.8.6'
+    '@contentful/forma-36-fcss': '0.2.12',
+    '@contentful/forma-36-react-components': '3.64.2',
+    '@contentful/forma-36-tokens': '0.9.2',
+    'contentful-ui-extensions-sdk': '3.24.0',
+    'prop-types': '15.7.2',
+    react: '17.0.1',
+    'react-dom': '17.0.1',
   };
 
   pkg.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
 
   if (type === 'page') {
     pkg.dependencies = Object.assign({}, pkg.dependencies, {
-      history: '4.9.0',
-      'react-router': '5.0.1',
-      'react-router-dom': '5.0.1'
+      history: '5.0.0',
+      'react-router': '5.2.0',
+      'react-router-dom': '5.2.0',
     });
     if (language === 'typescript') {
       pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
-        '@types/history': '4.7.2',
-        '@types/react-router': '5.0.2',
-        '@types/react-router-dom': '4.3.4'
+        '@types/history': '4.7.8',
+        '@types/react-router': '5.1.8',
+        '@types/react-router-dom': '5.1.6',
       });
     }
   }
 
   if (language === 'typescript') {
     pkg.scripts = Object.assign({}, pkg.scripts, {
-      lint: 'eslint ./ --ext .js,.jsx,.ts,.tsx && tsc -p ./ --noEmit'
+      lint: 'eslint ./ --ext .js,.jsx,.ts,.tsx && tsc -p ./ --noEmit',
     });
 
     pkg.devDependencies = Object.assign({}, pkg.devDependencies, {
-      typescript: '3.5.2',
-      '@types/jest': '24.0.15',
-      '@types/react': '^16.8.17',
-      '@types/react-dom': '^16.8.4',
-      '@types/webpack-env': '1.13.9'
+      typescript: '4.0.5',
+      '@types/jest': '26.0.15',
+      '@types/react': '16.9.56',
+      '@types/react-dom': '16.9.9',
+      '@types/webpack-env': '1.15.3',
     });
   }
 
