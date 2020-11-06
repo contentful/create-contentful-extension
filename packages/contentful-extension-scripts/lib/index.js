@@ -2,7 +2,7 @@
 
 /* eslint-disable no-console, no-process-exit */
 
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
@@ -11,7 +11,7 @@ const spawn = require('cross-spawn');
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(
-  x => x === 'build' || x === 'start' || x === 'help' || x === 'test'
+  (x) => x === 'build' || x === 'start' || x === 'help' || x === 'test'
 );
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
@@ -43,8 +43,8 @@ switch (script) {
       process.exit(1);
     }
     process.exit(result.status);
-    break;
   }
+  // eslint-ignore-next-line no-fallthrough
   default:
     console.log(`Unknown script "${script}".`);
     break;
