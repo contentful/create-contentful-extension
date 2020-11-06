@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.0...@contentful/contentful-extension-scripts@0.20.1) (2020-11-06)
+
+
+### Bug Fixes
+
+* **contentful-extension-scripts:** make render a class method ([#98](https://github.com/contentful/create-contentful-extension/issues/98)) ([786ad59](https://github.com/contentful/create-contentful-extension/commit/786ad59d137dc02a2be93dc99553c1549be5f091))
+
+
+
+
+
 # [0.20.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.19.0...@contentful/contentful-extension-scripts@0.20.0) (2020-10-28)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
