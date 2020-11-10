@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.3](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.2...@contentful/contentful-extension-scripts@0.20.3) (2020-11-10)
+
+
+### Bug Fixes
+
+* pin forma version ([#107](https://github.com/contentful/create-contentful-extension/issues/107)) ([d72c8b1](https://github.com/contentful/create-contentful-extension/commit/d72c8b1f90c9eccdded0edae35346ae090243697))
+
+
+
+
+
 ## [0.20.2](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.1...@contentful/contentful-extension-scripts@0.20.2) (2020-11-10)
 
 
