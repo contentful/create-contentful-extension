@@ -1,3 +1,9 @@
+# We recommend create-contentful-app over this repo
+For new projects, please use the [create-contentful-app](https://www.contentful.com/developers/docs/extensibility/app-framework/create-contentful-app/) cli.
+
+Using apps will allow you to use the latest extensibility features, and up to
+date versions of our other open source libraries.
+
 # Create Contentful Extension [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/contentful/create-contentful-extension/pulls)
 
 Create Contentful Extension is a CLI tool for developing in-app extensions without the hassle of managing build configurations.
@@ -169,6 +175,7 @@ Yes, it's possible. Edit `start` scripts in package.json file according to the f
 ```json
 "start": "contentful-extension-scripts start --port 8000",
 ```
+
 ### I want to serve the extension without creating/updating the extension via the CLI
 
 If you simply want to serve the extension without having the CLI create or update an extension in your space, you can add `--serve-only` to the `start` command.
@@ -176,6 +183,7 @@ If you simply want to serve the extension without having the CLI create or updat
 ```json
 "start": "contentful-extension-scripts start --serve-only",
 ```
+
 Available since v0.14.0
 
 ### I'm using development mode but my extension is not showing up. What's wrong?
