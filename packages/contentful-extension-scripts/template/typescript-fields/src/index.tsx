@@ -50,7 +50,7 @@ export class App extends React.Component<AppProps, AppState> {
     }
   };
 
-  render = () => {
+  render() {
     return (
       <TextInput
         width="large"

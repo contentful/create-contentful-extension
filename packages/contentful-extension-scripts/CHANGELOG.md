@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.3](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.2...@contentful/contentful-extension-scripts@0.20.3) (2020-11-10)
+
+
+### Bug Fixes
+
+* pin forma version ([#107](https://github.com/contentful/create-contentful-extension/issues/107)) ([d72c8b1](https://github.com/contentful/create-contentful-extension/commit/d72c8b1f90c9eccdded0edae35346ae090243697))
+
+
+
+
+
+## [0.20.2](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.1...@contentful/contentful-extension-scripts@0.20.2) (2020-11-10)
+
+
+### Bug Fixes
+
+* downgrade forma-36 ([#106](https://github.com/contentful/create-contentful-extension/issues/106)) ([1b5cd87](https://github.com/contentful/create-contentful-extension/commit/1b5cd87fcd43891aefebb2a3beebccdb60c7496a))
+
+
+
+
+
+## [0.20.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.0...@contentful/contentful-extension-scripts@0.20.1) (2020-11-06)
+
+
+### Bug Fixes
+
+* **contentful-extension-scripts:** make render a class method ([#98](https://github.com/contentful/create-contentful-extension/issues/98)) ([786ad59](https://github.com/contentful/create-contentful-extension/commit/786ad59d137dc02a2be93dc99553c1549be5f091))
+
+
+
+
+
 # [0.20.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.19.0...@contentful/contentful-extension-scripts@0.20.0) (2020-10-28)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts

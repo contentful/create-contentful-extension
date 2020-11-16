@@ -41,7 +41,7 @@ export class PageExtension extends React.Component {
     });
   }
 
-  render = () => {
+  render() {
     return (
       <div className="f36-margin--l">
         <Router history={this.history}>

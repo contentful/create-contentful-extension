@@ -82,10 +82,16 @@ const inlineAssets = async () => {
 const bundler = new Bundler(entry, options);
 
 const run = async () => {
-  await urlLoader(bundler);
-  await bundler.bundle();
-  if (shouldInlineAssets) {
-    await inlineAssets();
+  try {
+    await urlLoader(bundler);
+    await bundler.bundle();
+    if (shouldInlineAssets) {
+      await inlineAssets();
+    }
+  } catch (e) {
+    console.log();
+    console.error(chalk.red(e.message));
+    process.exit(1);
   }
 };
 
