@@ -27,8 +27,8 @@ module.exports = (pkg, { language, type }) => {
     '@contentful/forma-36-tokens': '0.9.2',
     'contentful-ui-extensions-sdk': '3.24.0',
     'prop-types': '15.7.2',
-    react: '17.0.1',
-    'react-dom': '17.0.1',
+    react: '16.14.0',
+    'react-dom': '16.14.0',
   };
 
   pkg.browserslist = ['last 5 Chrome version', '> 1%', 'not ie <= 11'];
