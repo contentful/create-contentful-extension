@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.4](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.3...@contentful/contentful-extension-scripts@0.20.4) (2020-11-20)
+
+
+### Bug Fixes
+
+* Exit script on promise reject ([#79](https://github.com/contentful/create-contentful-extension/issues/79)) ([#80](https://github.com/contentful/create-contentful-extension/issues/80)) ([27b9592](https://github.com/contentful/create-contentful-extension/commit/27b9592b0b846b8b19d8299737f5d0d324026f6b))
+
+
+
+
+
 ## [0.20.3](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.2...@contentful/contentful-extension-scripts@0.20.3) (2020-11-10)
 
 
