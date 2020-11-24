@@ -1,7 +1,7 @@
 # We recommend create-contentful-app over this repo
 For new projects, please use the [create-contentful-app](https://www.contentful.com/developers/docs/extensibility/app-framework/create-contentful-app/) cli.
 
-Using apps will allow you to use the latest extensibility features, and up to
+Using apps will allow you to use the latest features, and up to
 date versions of our other open source libraries.
 
 # Create Contentful Extension [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/contentful/create-contentful-extension/pulls)
