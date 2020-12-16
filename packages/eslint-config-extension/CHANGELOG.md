@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/contentful/create-contentful-extension/compare/@contentful/eslint-config-extension@0.4.1...@contentful/eslint-config-extension@0.4.2) (2020-12-16)
+
+
+### Bug Fixes
+
+* remove non-existing camelcase rule ([#150](https://github.com/contentful/create-contentful-extension/issues/150)) ([e0df70d](https://github.com/contentful/create-contentful-extension/commit/e0df70d0b9d585824e2330d8870a36f5732809b0))
+
+
+
+
+
 ## [0.4.1](https://github.com/contentful/create-contentful-extension/compare/@contentful/eslint-config-extension@0.4.0...@contentful/eslint-config-extension@0.4.1) (2020-11-06)
 
 **Note:** Version bump only for package @contentful/eslint-config-extension
