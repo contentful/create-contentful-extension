@@ -3,6 +3,7 @@
 process.env.NODE_ENV = 'development';
 
 const argv = require('yargs').argv;
+const chalk = require('chalk');
 
 const Bundler = require('parcel-bundler');
 const paths = require('./utils/paths');
