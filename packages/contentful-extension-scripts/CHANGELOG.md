@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.7](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.6...@contentful/contentful-extension-scripts@0.20.7) (2021-02-15)
+
+
+### Bug Fixes
+
+* downgrade forma dependency ([#204](https://github.com/contentful/create-contentful-extension/issues/204)) ([bdb60f5](https://github.com/contentful/create-contentful-extension/commit/bdb60f5b5bbad9c89dda81bf1fea1d0e502dad6e))
+
+
+
+
+
 ## [0.20.6](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.5...@contentful/contentful-extension-scripts@0.20.6) (2021-02-15)
 
 
