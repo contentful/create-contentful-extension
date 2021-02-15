@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.6](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.5...@contentful/contentful-extension-scripts@0.20.6) (2021-02-15)
+
+
+### Bug Fixes
+
+* Chalk is not defined ([#171](https://github.com/contentful/create-contentful-extension/issues/171)) ([cd9492a](https://github.com/contentful/create-contentful-extension/commit/cd9492aadff1d1b1d77078b68c6e5caebcbe674a))
+
+
+
+
+
 ## [0.20.5](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.4...@contentful/contentful-extension-scripts@0.20.5) (2020-12-16)
 
 **Note:** Version bump only for package @contentful/contentful-extension-scripts
