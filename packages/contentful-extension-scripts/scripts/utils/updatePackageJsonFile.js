@@ -22,9 +22,9 @@ module.exports = (pkg, { language, type }) => {
     eslint: '7.12.1',
   });
   pkg.dependencies = {
-    '@contentful/forma-36-fcss': '0.2.12',
-    '@contentful/forma-36-react-components': '3.64.2',
-    '@contentful/forma-36-tokens': '0.9.2',
+    '@contentful/forma-36-fcss': '^0.0.35',
+    '@contentful/forma-36-react-components': '3.11.3',
+    '@contentful/forma-36-tokens': '^0.5.2',
     'contentful-ui-extensions-sdk': '3.24.0',
     'prop-types': '15.7.2',
     react: '16.14.0',
