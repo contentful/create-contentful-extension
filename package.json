@@ -9,7 +9,7 @@
     "commitizen": "^4.2.2",
     "cz-customizable": "6.3.0",
     "eslint": "7.14.0",
-    "eslint-config-prettier": "6.15.0",
+    "eslint-config-prettier": "8.1.0",
     "eslint-plugin-node": "11.1.0",
     "husky": "^4.3.8",
     "lerna": "3.22.1",
