@@ -184,6 +184,14 @@ If you simply want to serve the extension without having the CLI create or updat
 "start": "contentful-extension-scripts start --serve-only",
 ```
 
+### I want to create/update the extension without starting the parcel server
+
+If you simply want to serve the extension without having the CLI start its parcel server, you can add `--update-only` to the `start` command.
+
+```json
+"start": "contentful-extension-scripts start --update-only",
+```
+
 Available since v0.14.0
 
 ### I'm using development mode but my extension is not showing up. What's wrong?
