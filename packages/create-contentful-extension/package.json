@@ -40,7 +40,7 @@
     "commander": "6.2.0",
     "cross-spawn": "7.0.3",
     "fs-extra": "9.1.0",
-    "inquirer": "7.3.3"
+    "inquirer": "8.1.0"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
