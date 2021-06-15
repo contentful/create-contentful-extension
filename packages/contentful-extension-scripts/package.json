@@ -40,7 +40,7 @@
     "chalk": "4.1.0",
     "cross-spawn": "7.0.3",
     "fs-extra": "9.1.0",
-    "htmlnano": "^0.2.7",
+    "htmlnano": "^1.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "^26.6.1",
     "jest-watch-typeahead": "^0.6.1",
