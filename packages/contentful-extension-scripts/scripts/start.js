@@ -40,7 +40,9 @@ const run = async () => {
       await updateExtension(port, https);
     }
 
-    await bundler.serve(port, https);
+    if(!argv.updateOnly){
+      await bundler.serve(port, https);
+    }
   } catch (e) {
     console.log();
     console.error(chalk.red(e.message));
