@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.7...@contentful/contentful-extension-scripts@0.21.0) (2021-07-22)
+
+
+### Features
+
+* pin husky to v4 ([#254](https://github.com/contentful/create-contentful-extension/issues/254)) ([38844fe](https://github.com/contentful/create-contentful-extension/commit/38844fe721c7ec7ddecaae7c75f94279fbd75ab6))
+
+
+
+
+
 ## [0.20.7](https://github.com/contentful/create-contentful-extension/compare/@contentful/contentful-extension-scripts@0.20.6...@contentful/contentful-extension-scripts@0.20.7) (2021-02-15)
 
 
