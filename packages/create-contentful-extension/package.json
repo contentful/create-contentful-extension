@@ -36,7 +36,7 @@
     "url": "https://github.com/contentful/create-contentful-extension/issues"
   },
   "dependencies": {
-    "chalk": "4.1.0",
+    "chalk": "4.1.2",
     "commander": "6.2.0",
     "cross-spawn": "7.0.3",
     "fs-extra": "9.1.0",
